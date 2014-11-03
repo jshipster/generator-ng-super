@@ -1,5 +1,7 @@
 {
-  "name": "package",
+  "name": "<%= appname%>",
   "version": "0.0.0",
-  "dependencies": {}
+  "dependencies": {
+  	
+  }
 }

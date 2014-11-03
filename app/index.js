@@ -30,7 +30,7 @@ var NgSuperGenerator = yeoman.generators.Base.extend({
         }];
 
         this.prompt(prompts, function(props) {
-            this.appName = props.appName;
+            this.appname = props.appName;
             this.includeScss = props.includeScss;
 
             this.log('You have selected ' + this.includeScss);
@@ -42,11 +42,8 @@ var NgSuperGenerator = yeoman.generators.Base.extend({
 
     writing: {
         app: function() {
-            this.dest.mkdir('app');
-            this.dest.mkdir('app/templates');
-
-            this.src.copy('_package.json', 'package.json');
-            this.src.copy('_bower.json', 'bower.json');
+            this.template.apply(this, ['_package.json', 'package.json']);
+            this.template.apply(this, ['_bower.json', 'bower.json']);
         },
 
         projectfiles: function() {
