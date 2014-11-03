@@ -9,7 +9,10 @@ var NgSuperGenerator = yeoman.generators.NamedBase.extend({
   },
 
   writing: function () {
-    this.src.copy('somefile.js', 'somefile.js');
+    this.template.apply(this, [
+    	'controller.js',
+    	this.name + '.js'
+  	]);
   }
 });
 
