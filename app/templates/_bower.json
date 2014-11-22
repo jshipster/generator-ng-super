@@ -1,5 +1,5 @@
-{<% var ngVer = "1.3.0" %>
-  "name": "<%= appname%>",
+{
+  "name": "<%= appname %>",
   "version": "0.0.0",
    "dependencies": {
     "angular": "~<%= ngVer %>",

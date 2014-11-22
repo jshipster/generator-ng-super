@@ -32,10 +32,10 @@ var NgSuperGenerator = yeoman.generators.Base.extend({
         this.prompt(prompts, function(props) {
             this.appname = props.appName;
             this.includeScss = props.includeScss;
-
+            this.ngVer = "1.3.0";
             this.log('You have selected ' + this.includeScss);
 
-            
+
             done();
         }.bind(this));
     },
@@ -44,6 +44,12 @@ var NgSuperGenerator = yeoman.generators.Base.extend({
         app: function() {
             this.template.apply(this, ['_package.json', 'package.json']);
             this.template.apply(this, ['_bower.json', 'bower.json']);
+            this.template.apply(this, ['_index.html','app/index.html']);
+
+            this.src.copy('_gruntfile.js', 'gruntfile.js');
+            this.src.copy('_configLoader.js','configLoader.js');
+            this.src.copy('tasks/_connect.js','tasks/connect.js');
+            this.src.copy('tasks/_watch.js','tasks/watch.js');
         },
 
         projectfiles: function() {
