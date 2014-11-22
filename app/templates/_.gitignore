@@ -1,0 +1,11 @@
+# Logs
+logs
+*.log
+
+# dist directory
+dist/
+
+# Dependency directory
+node_modules/
+bower_components/
+

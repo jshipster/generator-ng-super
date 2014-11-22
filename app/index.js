@@ -50,6 +50,7 @@ var NgSuperGenerator = yeoman.generators.Base.extend({
             this.src.copy('_configLoader.js','configLoader.js');
             this.src.copy('tasks/_connect.js','tasks/connect.js');
             this.src.copy('tasks/_watch.js','tasks/watch.js');
+            this.src.copy('_.gitignore','.gitignore');
         },
 
         projectfiles: function() {
