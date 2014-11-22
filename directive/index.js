@@ -1,5 +1,5 @@
 'use strict';
-var util = require('util');
+var utils = require('../utils');
 var yeoman = require('yeoman-generator');
 
 
@@ -10,7 +10,7 @@ var NgSuperGenerator = yeoman.generators.NamedBase.extend({
 
   writing: function () {
     this.template.apply(this, [
-      'directive.js',
+      utils.getComponentsTemplatePath('directive.js'),
       this.name + '.js'
     ]);
   }

@@ -1,5 +1,5 @@
 'use strict';
-var util = require('util');
+var utils = require('../utils');
 var path = require('path');
 var yeoman = require('yeoman-generator');
 var yosay = require('yosay');
@@ -42,25 +42,28 @@ var NgSuperGenerator = yeoman.generators.Base.extend({
 
     writing: {
         app: function() {
-            this.template.apply(this, ['_package.json', 'package.json']);
-            this.template.apply(this, ['_bower.json', 'bower.json']);
-            this.template.apply(this, ['_index.html','app/index.html']);
+            this.template.apply(this, [utils.getRootTemplatePath('package.json'), 'package.json']);
+            this.template.apply(this, [utils.getRootTemplatePath('bower.json'), 'bower.json']);
+            this.template.apply(this, [utils.getRootTemplatePath('index.html'),'app/index.html']);
+            this.src.copy(utils.getRootTemplatePath('.gitignore'),'.gitignore');
 
-            this.src.copy('_gruntfile.js', 'gruntfile.js');
-            this.src.copy('_configLoader.js','configLoader.js');
-            this.src.copy('tasks/_connect.js','tasks/connect.js');
-            this.src.copy('tasks/_watch.js','tasks/watch.js');
-            this.src.copy('_.gitignore','.gitignore');
         },
 
         projectfiles: function() {
-            this.src.copy('editorconfig', '.editorconfig');
-            this.src.copy('jshintrc', '.jshintrc');
+            this.src.copy(utils.getRootTemplatePath('editorconfig'), '.editorconfig');
+            this.src.copy(utils.getRootTemplatePath('jshintrc'), '.jshintrc');
+        },
+
+        gruntFiles: function(){
+          this.src.copy(utils.getRootTemplatePath('configLoader.js'),'configLoader.js');
+          this.src.copy(utils.getRootTemplatePath('gruntfile.js'), 'gruntfile.js');
+          this.src.copy(utils.getGruntTasksTemplatePath('connect.js'),'tasks/connect.js');
+          this.src.copy(utils.getGruntTasksTemplatePath('watch.js'),'tasks/watch.js');
         }
     },
 
     end: function() {
-        this.installDependencies();
+        //this.installDependencies();
     }
 });
 
