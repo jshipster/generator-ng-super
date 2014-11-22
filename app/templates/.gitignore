@@ -1,0 +1,12 @@
+### Node template
+# Logs
+logs
+*.log
+
+# Compiled binary addons (http://nodejs.org/api/addons.html)
+dist/
+
+# Dependency directory
+node_modules/
+bower_components/
+
