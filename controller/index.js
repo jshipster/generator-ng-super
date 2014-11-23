@@ -13,6 +13,13 @@ var NgSuperGenerator = yeoman.generators.NamedBase.extend({
     	utils.getComponentsTemplatePath('controller.js'),
     	this.name + '.js'
   	]);
+  },
+
+  test: function(){
+    this.template.apply(this, [
+      utils.getComponentsTestTemplatePath('controller.js'),
+      '../tests/' + this.name + '.js'
+    ]);
   }
 });
 
