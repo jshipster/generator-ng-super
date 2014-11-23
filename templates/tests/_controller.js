@@ -2,6 +2,8 @@
 
 describe('Controller: <%= name %>', function(){
 
+  beforeEach(module('<%= appname %>'))
+
   var _ctrl, _scope;
 
   beforeEach(inject(function($controller, $injector){
