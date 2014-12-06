@@ -3,10 +3,10 @@
   'use strict';
 
   angular
-    .module('<%= appname %>')
-    .directive('<%= name %>', <%= name %>);
-  
-  function <%= name %>(){
+    .module('<%= module %>')
+    .directive('<%= component %>', <%= component %>);
+
+  function <%= component %>(){
 
     var directive = {
       link: link,
@@ -25,4 +25,4 @@
       console.info('This is a link function of the directive');
     }
   }
-});
+}());
