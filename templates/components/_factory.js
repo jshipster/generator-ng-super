@@ -2,12 +2,12 @@
 	'use strict';
 
 	angular
-		.module('<%= appname %>')
-		.factory('<%= name %>', <%= name %>)
+		.module('<%= module %>')
+		.factory('<%= component %>', <%= component %>)
 
-	<%= name %>.$inject = [];
+	<%= component %>.$inject = [];
 
-	function <%= name %>(){
+	function <%= component %>(){
 		var service = {
 			testFunction: testFunction
 		}
