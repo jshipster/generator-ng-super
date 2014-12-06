@@ -2,12 +2,12 @@
 	'use strict';
 
 	angular
-		.module('<%= appname %>')
-		.controller('<%= name %>', <%= name %>)
+		.module('<%= module %>')
+		.controller('<%= component %>', <%= component %>)
 
-	<%= name %>.$inject = [];
+	<%= component %>.$inject = [];
 
-	function <%= name %>(){
+	function <%= component %>(){
 		vm = this;
 
 		vm.testFunction = testFunction;

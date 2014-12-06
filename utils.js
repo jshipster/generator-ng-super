@@ -7,14 +7,18 @@ module.exports = {
   getRootTemplatePath: getRootTemplatePath,
   getComponentsTemplatePath: getComponentsTemplatePath,
   getComponentsTestTemplatePath: getComponentsTestTemplatePath,
-  getGruntTasksTemplatePath: getGruntTasksTemplatePath
-}
+  getComponentFilePath: getComponentFilePath,
+  getComponentTestFilePath: getComponentTestFilePath,
+  getGruntTasksTemplatePath: getGruntTasksTemplatePath,
+  setModuleComponentNames: setModuleComponentNames
+};
 
 var basePath = '../../templates/';
 var rootTemplateFolderPath = basePath + 'root/';
 var gruntTasksTemplateFolderPath = basePath + 'root/tasks/';
 var componentsTemplateFolderPath = basePath + 'components/';
 var componentsTestTemplateFolderPath = basePath + 'tests/';
+var componentsTestFolderPath = 'tests/';
 
 function getRootTemplatePath(fileName){
   return getFilePath(rootTemplateFolderPath, fileName);
@@ -28,10 +32,29 @@ function getComponentsTestTemplatePath(fileName){
   return getFilePath(componentsTestTemplateFolderPath, fileName);
 }
 
+function getComponentFilePath(module, component){
+  return module + '/' + component + '.js';
+}
+
+function getComponentTestFilePath(module, component){
+  return componentsTestFolderPath + module + '/' + component + '.js';
+}
+
 function getGruntTasksTemplatePath(fileName){
   return getFilePath(gruntTasksTemplateFolderPath, fileName);
 }
 
 function getFilePath(folderPath, fileName){
   return folderPath + '_' + fileName;
+}
+
+function setModuleComponentNames(retValObject, dottedName){
+  var names = dottedName.split('.');
+
+  if(names.length < 2){
+    throw 'Component must specify a module';
+  }
+
+  retValObject.module = names[0];
+  retValObject.component = names[1];
 }
