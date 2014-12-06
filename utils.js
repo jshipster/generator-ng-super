@@ -18,7 +18,10 @@ var rootTemplateFolderPath = basePath + 'root/';
 var gruntTasksTemplateFolderPath = basePath + 'root/tasks/';
 var componentsTemplateFolderPath = basePath + 'components/';
 var componentsTestTemplateFolderPath = basePath + 'tests/';
+
 var componentsTestFolderPath = 'tests/';
+var appFolderPath = 'app/';
+
 
 function getRootTemplatePath(fileName){
   return getFilePath(rootTemplateFolderPath, fileName);
@@ -33,7 +36,7 @@ function getComponentsTestTemplatePath(fileName){
 }
 
 function getComponentFilePath(module, component){
-  return module + '/' + component + '.js';
+  return appFolderPath + module + '/' + component + '.js';
 }
 
 function getComponentTestFilePath(module, component){
