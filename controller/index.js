@@ -6,6 +6,7 @@ var yeoman = require('yeoman-generator');
 var NgSuperGenerator = yeoman.generators.NamedBase.extend({
   initializing: function () {
     utils.setModuleComponentNames(this, this.name);
+    this.component = this._.capitalize(this.component) + 'Ctrl';
     this.log('You called the ng-super subgenerator with the argument ' + this.name + '.');
   },
 
