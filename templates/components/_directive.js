@@ -3,7 +3,7 @@
   'use strict';
 
   angular
-    .module('<%= module %>')
+    .module('app.<%= module %>')
     .directive('<%= component %>', <%= component %>);
 
   function <%= component %>(){
