@@ -46,12 +46,14 @@ var NgSuperGenerator = yeoman.generators.Base.extend({
             this.template.apply(this, [utils.getRootTemplatePath('bower.json'), 'bower.json']);
             this.template.apply(this, [utils.getRootTemplatePath('index.html'),'app/index.html']);
             this.src.copy(utils.getRootTemplatePath('.gitignore'),'.gitignore');
+            this.src.copy(utils.getRootTemplatePath('.bowerrc'),'.bowerrc');
 
         },
 
         projectfiles: function() {
             this.src.copy(utils.getRootTemplatePath('editorconfig'), '.editorconfig');
             this.src.copy(utils.getRootTemplatePath('jshintrc'), '.jshintrc');
+            this.directory('../../templates/root/app', 'app/');
         },
 
         gruntFiles: function(){

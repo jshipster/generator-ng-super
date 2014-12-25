@@ -3,12 +3,13 @@
   "version": "0.0.0",
    "dependencies": {
     "angular": "~<%= ngVer %>",
-    "angular-resource": "~<%= ngVer %>",
-    "angular-cookies": "~<%= ngVer %>",
     "angular-sanitize": "~<%= ngVer %>",
     "angular-animate": "~<%= ngVer %>",
-    "angular-touch": "~<%= ngVer %>",
-    "angular-route": "~<%= ngVer %>"
+    "angular-ui-router": "~0.2.13",
+    "jquery":"~2.1.1",
+    "restangular": "~1.4.0",
+    "bootstrap": "~3.2.0",
+    "angular-bootstrap": "~0.11.2"
   },
   "devDependencies": {
     "angular-mocks": "~<%= ngVer %>",

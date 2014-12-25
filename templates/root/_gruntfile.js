@@ -10,7 +10,7 @@ module.exports = function (grunt) {
   grunt.util._.extend(config, configLoader.load('./tasks/'));
   grunt.initConfig(config);
 
-  grunt.registerTask('serve', [
-
+  grunt.registerTask('server', [
+    'connect:server'
   ]);
 };

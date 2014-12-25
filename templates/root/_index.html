@@ -3,9 +3,33 @@
 <head lang="en">
   <meta charset="UTF-8">
   <title> ZE GENGO ! </title>
-
+  <link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap.css"/>
 </head>
-  <body ng-app="<%= appname %>">
+
+  <body ng-app="app" class="container">
     <div> This is ZE GENGO ! </div>
+    <div ui-view></div>
   </body>
+
+  <!-- build:js scripts/framework.js -->
+  <script src="bower_components/jquery/dist/jquery.js"></script>
+  <script src="bower_components/angular/angular.js"></script>
+  <script src="bower_components/angular-ui-router/release/angular-ui-router.js"></script>
+  <script src="bower_components/bootstrap/dist/js/bootstrap.js"></script>
+  <script src="bower_components/angular-bootstrap/ui-bootstrap-tpls.js"></script>
+  <script src="bower_components/angular-bootstrap/ui-bootstrap.js"></script>
+  <script src="bower_components/lodash/dist/lodash.js"></script>
+  <script src="bower_components/restangular/dist/restangular.js"></script>
+  <!-- endbuild -->
+
+  <!-- build:js scripts/app.js -->
+  <script src="app.module.js"></script>
+  <script src="core/core.module.js"></script>
+  <script src="core/restangularConfig.js"></script>
+  <script src="core/routerConfig.js"></script>
+  <script src="common/common.module.js"></script>
+  <script src="welcome/welcome.module.js"></script>
+  <script src="welcome/WelcomeCtrl.js"></script>
+  <!-- endbuild -->
+
 </html>
