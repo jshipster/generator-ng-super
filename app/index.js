@@ -65,7 +65,7 @@ var NgSuperGenerator = yeoman.generators.Base.extend({
     },
 
     end: function() {
-        //this.installDependencies();
+        this.installDependencies();
     }
 });
 
