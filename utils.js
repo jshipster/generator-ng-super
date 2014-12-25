@@ -10,7 +10,8 @@ module.exports = {
   getComponentFilePath: getComponentFilePath,
   getComponentTestFilePath: getComponentTestFilePath,
   getGruntTasksTemplatePath: getGruntTasksTemplatePath,
-  setModuleComponentNames: setModuleComponentNames
+  setModuleComponentNames: setModuleComponentNames,
+  addScriptTagToIndex: addScriptTagToIndex
 };
 
 var basePath = '../../templates/';
@@ -60,4 +61,18 @@ function setModuleComponentNames(retValObject, dottedName){
 
   retValObject.module = names[0];
   retValObject.component = names[1];
+}
+
+function addScriptTagToIndex(self, scriptPath){
+  var pathToIndexFile = appFolderPath + 'index.html';
+  var indexReplacementTag = '<!-- endbuild -->';
+  var scriptText = [getScriptTag(scriptPath), '\t'+indexReplacementTag];
+  var indexFile = self.readFileAsString(pathToIndexFile);
+  indexFile = indexFile.replace(indexReplacementTag,scriptText.join('\n'));
+  self.writeFileFromString(indexFile, pathToIndexFile);
+}
+
+function getScriptTag(scriptPath){
+  var completePathToScript = scriptPath.replace('app/','');
+  return '<script src="' + completePathToScript + '"></script>';
 }

@@ -10,10 +10,14 @@ var NgSuperGenerator = yeoman.generators.NamedBase.extend({
   },
 
   file: function () {
+    var templatePath = utils.getComponentsTemplatePath('factory.js');
+    var filePath = utils.getComponentFilePath(this.module, this.component);
     this.template.apply(this, [
-      utils.getComponentsTemplatePath('factory.js'),
-      utils.getComponentFilePath(this.module, this.component)
+      templatePath,
+      filePath
     ]);
+
+    utils.addScriptTagToIndex(this, filePath);
   },
 
   test: function(){

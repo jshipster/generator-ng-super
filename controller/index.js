@@ -11,16 +11,24 @@ var NgSuperGenerator = yeoman.generators.NamedBase.extend({
   },
 
   file: function () {
+    var templatePath = utils.getComponentsTemplatePath('controller.js');
+    var filePath = utils.getComponentFilePath(this.module, this.component);
+
     this.template.apply(this, [
-    	utils.getComponentsTemplatePath('controller.js'),
-    	utils.getComponentFilePath(this.module, this.component)
+    	templatePath,
+    	filePath
   	]);
+
+    utils.addScriptTagToIndex(this, filePath);
   },
 
   test: function(){
+    var testTemplatePath = utils.getComponentsTestTemplatePath('controller.js');
+    var testTestTemplateFilePath = utils.getComponentTestFilePath(this.module, this.component);
+
     this.template.apply(this, [
-      utils.getComponentsTestTemplatePath('controller.js'),
-      utils.getComponentTestFilePath(this.module, this.component)
+      testTemplatePath,
+      testTestTemplateFilePath
     ]);
   }
 });
