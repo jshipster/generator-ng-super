@@ -9,7 +9,7 @@
 
   function configuration($stateProvider){
 
-    $stateProvider
-      .state();
+    //$stateProvider
+    //  .state();
   }
 }());

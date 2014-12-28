@@ -10,10 +10,15 @@ var NgSuperGenerator = yeoman.generators.NamedBase.extend({
   },
 
   module: function () {
+    var templatePath = utils.getComponentsTemplatePath('featureModule.js');
+    var filePath = utils.getComponentFilePath(this.module, this.module + '.module');
+
     this.template.apply(this, [
-    	utils.getComponentsTemplatePath('featureModule.js'),
-    	utils.getComponentFilePath(this.module, this.module + '.module')
+    	templatePath,
+    	filePath
   	]);
+    utils.addScriptTagToIndex(this, filePath);
+    utils.addModuleNameToAppModule(this, this.module);
   }
 });
 

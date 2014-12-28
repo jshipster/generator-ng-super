@@ -1,6 +1,3 @@
-/**
- * Created by muhammadumairkhan on 22/11/14.
- */
 'use strict';
 
 module.exports = {
@@ -11,7 +8,8 @@ module.exports = {
   getComponentTestFilePath: getComponentTestFilePath,
   getGruntTasksTemplatePath: getGruntTasksTemplatePath,
   setModuleComponentNames: setModuleComponentNames,
-  addScriptTagToIndex: addScriptTagToIndex
+  addScriptTagToIndex: addScriptTagToIndex,
+  addModuleNameToAppModule: addModuleNameToAppModule
 };
 
 var basePath = '../../templates/';
@@ -66,7 +64,7 @@ function setModuleComponentNames(retValObject, dottedName){
 function addScriptTagToIndex(self, scriptPath){
   var pathToIndexFile = appFolderPath + 'index.html';
   var indexReplacementTag = '<!-- endbuild -->';
-  var scriptText = [getScriptTag(scriptPath), '\t'+indexReplacementTag];
+  var scriptText = [getScriptTag(scriptPath), indexReplacementTag];
   var indexFile = self.readFileAsString(pathToIndexFile);
   indexFile = indexFile.replace(indexReplacementTag,scriptText.join('\n'));
   self.writeFileFromString(indexFile, pathToIndexFile);
@@ -75,4 +73,52 @@ function addScriptTagToIndex(self, scriptPath){
 function getScriptTag(scriptPath){
   var completePathToScript = scriptPath.replace('app/','');
   return '<script src="' + completePathToScript + '"></script>';
+}
+
+function addModuleNameToAppModule(self, moduleName){
+  var pathToAppModuleFile = appFolderPath + 'app.module.js';
+  var moduleReplacementTag = ']);';
+  var moduleFile = self.readFileAsString(pathToAppModuleFile);
+  var splitModuleFile = moduleFile.split('\n');
+  var indexOfModuleTag = indexOfTag(splitModuleFile, moduleReplacementTag);
+  var finalModuleReplacementTag = splitModuleFile[indexOfModuleTag];
+  var placeACommaIndex = indexOfModuleTag - 1;
+  splitModuleFile[placeACommaIndex] = splitModuleFile[placeACommaIndex] + ',';
+  var moduleNameToBeInserted = insertSpaces("'app." + moduleName + "'", countSpaces(splitModuleFile[placeACommaIndex])/2);
+  moduleFile = splitModuleFile.join('\n');
+  var moduleNameText = [moduleNameToBeInserted, finalModuleReplacementTag];
+
+  moduleFile = moduleFile.replace(moduleReplacementTag,moduleNameText.join('\n'));
+  self.writeFileFromString(moduleFile, pathToAppModuleFile);
+}
+
+function indexOfTag(fileArr, tag){
+  var tagIndex = -1;
+
+  fileArr.forEach(function(value, index){
+    if(value.indexOf(tag) !== -1){
+      tagIndex = index;
+    }
+  });
+
+  return tagIndex;
+}
+
+function countSpaces(value){
+  var spacesCount = 0;
+  for(var i = 0, len = value.length; i < len; i++){
+    if(value.charAt(i) === ' '){
+      spacesCount++;
+    }
+  }
+
+  return spacesCount;
+}
+
+function insertSpaces(value, count){
+  for(var i = 0, len  = count; i < len; i++){
+    value = ' ' + value;
+  }
+
+  return value;
 }
