@@ -64,9 +64,11 @@ function setModuleComponentNames(retValObject, dottedName){
 function addScriptTagToIndex(self, scriptPath){
   var pathToIndexFile = appFolderPath + 'index.html';
   var indexReplacementTag = '<!-- endbuild -->';
-  var scriptText = [getScriptTag(scriptPath), indexReplacementTag];
   var indexFile = self.readFileAsString(pathToIndexFile);
-  indexFile = indexFile.replace(indexReplacementTag,scriptText.join('\n'));
+  var splitIndexFile = indexFile.split('\n');
+  var indexOfReplacementTag = indexOfTag(splitIndexFile, indexReplacementTag);
+  var scriptText = [getScriptTag(scriptPath), insertSpaces(indexReplacementTag, countSpaces(splitIndexFile[indexOfReplacementTag])/2)];
+  indexFile = indexFile.replace(indexReplacementTag, scriptText.join('\n'));
   self.writeFileFromString(indexFile, pathToIndexFile);
 }
 
