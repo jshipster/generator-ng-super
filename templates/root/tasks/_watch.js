@@ -1,26 +1,23 @@
-
-var watchOptions =  {
-  cwd: {
-    files: 'app',
-    livereload: true
-  }
-};
-
 var watchTasks = [];
 
 module.exports = {
-  js: {
-    files: [
-      '**/*.js'
-    ],
-    tasks: watchTasks,
-    options: watchOptions
+  options:{
+    livereload: true,
+    cwd: 'app'
   },
-  html: {
-    files: [
-      '**/*.html'
+  js: {
+    files:[
+      '**/*.js',
+      '!bower_components/**/*.js',
+      '!tests/**/*.js'
     ],
-    tasks: watchTasks,
-    options: watchOptions
+    tasks: watchTasks
+  },
+  html:{
+    files:[
+      '**/*.html',
+      '!bower_components/**/*.html'
+    ],
+    tasks: watchTasks
   }
 }

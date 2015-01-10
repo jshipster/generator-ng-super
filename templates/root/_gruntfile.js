@@ -11,6 +11,6 @@ module.exports = function (grunt) {
   grunt.initConfig(config);
 
   grunt.registerTask('server', [
-    'connect:server'
+    'concurrent:dev'
   ]);
 };

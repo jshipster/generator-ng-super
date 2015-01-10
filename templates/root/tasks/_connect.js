@@ -24,7 +24,7 @@ module.exports = {
       open: true,
       middleware: function (connect, options) {
         // Proxy all requests to target the local application.
-        var middlewares = [];
+        var middlewares = [require('connect-livereload')()];
         options.base.forEach(function(base){
           middlewares.push(connect.static(base));
           middlewares.push(connect.directory(base));
