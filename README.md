@@ -1,29 +1,6 @@
 # generator-ng-super [![Build Status](https://secure.travis-ci.org/umayr/generator-ng-super.png?branch=master)](https://travis-ci.org/umayr/generator-ng-super)
 
-> [Yeoman](http://yeoman.io) generator
-
-
-## Getting Started
-
-### What is Yeoman?
-
-Trick question. It's not a thing. It's this guy:
-
-![](http://i.imgur.com/JHaAlBJ.png)
-
-Basically, he wears a top hat, lives in your computer, and waits for you to tell him what kind of application you wish to create.
-
-Not every new computer comes with a Yeoman pre-installed. He lives in the [npm](https://npmjs.org) package repository. You only have to ask for him once, then he packs up and moves into your hard drive. *Make sure you clean up, he likes new and shiny things.*
-
-```bash
-npm install -g yo
-```
-
-### Yeoman Generators
-
-Yeoman travels light. He didn't pack any generators when he moved in. You can think of a generator like a plug-in. You get to choose what type of application you wish to create, such as a Backbone application or even a Chrome extension.
-
-To install generator-ng-super clone this repository:
+To install generator-ng-super clone this repository and then:
 
 ```bash
 cd generator-ng-super
@@ -72,12 +49,125 @@ Produces: ```app/dashboard/UserCtrl.js```:
  }());
 ```
 
-### Getting To Know Yeoman
+#### Directive
 
-Yeoman has a heart of gold. He's a person with feelings and opinions, but he's very easy to work with. If you think he's too opinionated, he can be easily convinced.
+Generates an Angular Directive for the provided Module
 
-If you'd like to get to know Yeoman better and meet some of his friends, [Grunt](http://gruntjs.com) and [Bower](http://bower.io), check out the complete [Getting Started Guide](https://github.com/yeoman/yeoman/wiki/Getting-Started).
+```bash
+yo ng-super:directive common.kuSubmit
+```
 
+Produces: ```app/common/kuSubmit.js```:
+
+```javascript
+(function(){
+
+  'use strict';
+
+  angular
+    .module('app.common')
+    .directive('kuSubmit', kuSubmit);
+
+  function kuSubmit(){
+
+    var directive = {
+      link: link,
+      restrict: 'EA',
+      template: '<div></div>',
+      scope: {
+
+      }
+    };
+
+    return directive;
+
+    /////////////////////
+
+    function link (scope, elem, attrs){
+      console.info('This is a link function of the directive');
+    }
+  }
+}());
+```
+
+#### Factory
+
+Generates an Angular Factory for the provided Module
+
+```bash
+yo ng-super:factory common.calender
+```
+
+Produces: ```app/common/calender.js```:
+
+```javascript
+(function(){
+	'use strict';
+
+	angular
+		.module('app.common')
+		.factory('calender', calender)
+
+	calender.$inject = [];
+
+	function calender(){
+		var service = {
+			testFunction: testFunction
+		}
+
+		return service;
+
+		////////////////////
+
+		function testFunction () {
+			console.info('This is a test function');
+		}
+	}
+}());
+```
+
+#### Feature
+
+Generates an Angular Module
+
+```bash
+yo ng-super:feature talks
+```
+
+Produces: ```app/talks/talks.module.js```:
+
+```javascript
+(function(){
+  'use strict';
+
+  angular
+    .module('app.talks', [])
+    .config(configuration);
+
+  configuration.$injector = ['$stateProvider'];
+
+  function configuration($stateProvider){
+
+    //add your state mappings here
+    //$stateProvider
+    //  .state();
+  }
+}());
+```
+
+#### View
+
+Generates an HTML view
+
+```bash
+yo ng-super:view dashboard.performance
+```
+
+Produces: ```app/dashboard/performance.html```:
+
+```html
+<div> this a a sample view for dashboard.performance </div>
+```
 
 ## License
 
