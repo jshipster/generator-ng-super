@@ -9,6 +9,7 @@
 
   function configuration($stateProvider){
 
+    //add your state mappings here
     //$stateProvider
     //  .state();
   }
