@@ -23,16 +23,53 @@ npm install -g yo
 
 Yeoman travels light. He didn't pack any generators when he moved in. You can think of a generator like a plug-in. You get to choose what type of application you wish to create, such as a Backbone application or even a Chrome extension.
 
-To install generator-ng-super from npm, run:
+To install generator-ng-super clone this repository:
 
 ```bash
-npm install -g generator-ng-super
+cd generator-ng-super
+npm install link
 ```
 
 Finally, initiate the generator:
 
 ```bash
+mkdir superApp
+cd superApp
 yo ng-super
+```
+
+### Sub-generators
+
+#### Controller
+
+Generates an Angular Controller for the provided Module
+
+```bash
+yo ng-super:controller dashboard.user
+```
+
+Produces: ```app/dashboard/UserCtrl.js```:
+
+```javascript
+ (function(){
+ 	'use strict';
+ 
+ 	angular
+ 		.module('app.dashboard')
+ 		.controller('UserCtrl', UserCtrl)
+ 
+ 	UserCtrl.$inject = [];
+ 
+ 	function UserCtrl(){
+ 		vm = this;
+ 
+ 		vm.testFunction = testFunction;
+ 
+ 		function testFunction () {
+ 			console.info('This is a test function');
+ 		}
+ 	}
+ }());
 ```
 
 ### Getting To Know Yeoman
