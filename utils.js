@@ -34,8 +34,11 @@ function getComponentsTestTemplatePath(fileName){
   return getFilePath(componentsTestTemplateFolderPath, fileName);
 }
 
-function getComponentFilePath(module, component){
-  return appFolderPath + module + '/' + component + '.js';
+function getComponentFilePath(module, component, isHTML){
+  var componentPath = appFolderPath + module + '/' + component;
+  componentPath += isHTML? '.html' : '.js'
+  return componentPath;
+
 }
 
 function getComponentTestFilePath(module, component){
