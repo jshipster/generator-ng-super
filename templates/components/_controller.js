@@ -12,6 +12,8 @@
 
 		vm.testFunction = testFunction;
 
+    /////////////////////
+
 		function testFunction () {
 			console.info('This is a test function');
 		}
