@@ -7,9 +7,15 @@ var NgSuperGenerator = yeoman.generators.NamedBase.extend({
   initializing: function () {
     utils.setModuleComponentNames(this, this.name);
     this.component = this._.capitalize(this.component) + 'Ctrl';
-    this.log('You called the ng-super subgenerator with the argument ' + this.name + '.');
+    this.log('Controller Sub-Generator invoked');
   },
-
+  module: function(){
+    if(utils.doesModuleExist(this, this.module)){
+      this.composeWith('ng-super:feature', {
+        args:[this.module]
+      });
+    };
+  },
   file: function () {
     var templatePath = utils.getComponentsTemplatePath('controller.js');
     var filePath = utils.getComponentFilePath(this.module, this.component);

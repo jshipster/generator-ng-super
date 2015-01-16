@@ -6,9 +6,15 @@ var yeoman = require('yeoman-generator');
 var NgSuperGenerator = yeoman.generators.NamedBase.extend({
   initializing: function () {
     utils.setModuleComponentNames(this, this.name);
-    this.log('You called the ng-super subgenerator with the argument ' + this.name + '.');
+    this.log('Factory Sub-Generator invoked');
   },
-
+  module: function(){
+    if(utils.doesModuleExist(this, this.module)){
+      this.composeWith('ng-super:feature', {
+        args:[this.module]
+      });
+    };
+  },
   file: function () {
     var templatePath = utils.getComponentsTemplatePath('factory.js');
     var filePath = utils.getComponentFilePath(this.module, this.component);

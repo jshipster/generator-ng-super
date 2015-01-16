@@ -9,7 +9,8 @@ module.exports = {
   getGruntTasksTemplatePath: getGruntTasksTemplatePath,
   setModuleComponentNames: setModuleComponentNames,
   addScriptTagToIndex: addScriptTagToIndex,
-  addModuleNameToAppModule: addModuleNameToAppModule
+  addModuleNameToAppModule: addModuleNameToAppModule,
+  doesModuleExist: doesModuleExist
 };
 
 var basePath = '../../templates/';
@@ -126,4 +127,19 @@ function insertSpaces(value, count){
   }
 
   return value;
+}
+
+function doesModuleExist(self, moduleName){
+  var pathToModuleFile = appFolderPath + moduleName +'/' +moduleName+ '.module.js';
+  var shouldCreateModuleFile = true;
+  try{
+    var moduleFile = self.readFileAsString(pathToModuleFile);
+    if(moduleFile.length > 0){
+      shouldCreateModuleFile = false;
+    }
+  }
+  catch(e){
+    console.log(moduleName + ' module not found');
+  }
+  return shouldCreateModuleFile;
 }
