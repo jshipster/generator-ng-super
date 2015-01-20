@@ -128,6 +128,36 @@ Produces: ```app/common/calender.js```:
 }());
 ```
 
+###Filter
+
+Generates an Angular Filter for the provided Module
+
+```bash
+yo ng-super:filter common.currency
+```
+
+Produces: ```app/common/currency.js```:
+
+```javascript
+(function(){
+
+  angular
+    .module('app.common')
+    .filter('currency', currency);
+
+
+  currency.$inject = [];
+
+  function currency(){
+    return function (input){
+      return 'currency filter: ' + input;
+    }
+  }
+
+}());
+```
+
+
 #### Feature
 
 Generates an Angular Module
