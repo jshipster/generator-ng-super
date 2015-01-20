@@ -2,7 +2,7 @@
 
 describe('Factory: <%= component %>', function(){
 
-  beforeEach(module('<%= module %>'));
+  beforeEach(module('app.<%= module %>'));
 
   var _<%= component %>;
 

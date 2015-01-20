@@ -3,7 +3,7 @@
 
 	angular
 		.module('app.<%= module %>')
-		.controller('<%= component %>', <%= component %>)
+		.controller('<%= component %>', <%= component %>);
 
 	<%= component %>.$inject = [];
 
