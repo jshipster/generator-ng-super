@@ -67,7 +67,7 @@ function setModuleComponentNames(retValObject, dottedName){
 
 function addScriptTagToIndex(self, scriptPath){
   var pathToIndexFile = appFolderPath + 'index.html';
-  var indexReplacementTag = '<!-- endbuild -->';
+  var indexReplacementTag = scriptPath.indexOf('module') !== -1? '<script src="app.module.js"></script>' : '<!-- endbuild -->';
   var indexFile = self.readFileAsString(pathToIndexFile);
   var splitIndexFile = indexFile.split('\n');
   var indexOfReplacementTag = indexOfTag(splitIndexFile, indexReplacementTag);
