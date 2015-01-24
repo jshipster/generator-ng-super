@@ -8,7 +8,9 @@
   configuration.$inject = ['$urlRouterProvider'];
 
   function configuration($urlRouterProvider){
+
     $urlRouterProvider.otherwise('/welcome');
+
   }
 
 }());

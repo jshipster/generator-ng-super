@@ -5,7 +5,6 @@
   angular.module('app.core')
     .config(configuration);
 
-
   configuration.$inject = ['RestangularProvider'];
 
   function configuration(RestangularProvider){
