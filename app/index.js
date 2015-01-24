@@ -11,31 +11,29 @@ var NgSuperGenerator = yeoman.generators.Base.extend({
 
     prompting: function() {
         var done = this.async();
+        var prompts = [];
+        var appName = arguments[0];
 
         // Have Yeoman greet the user.
         this.log(yosay(
             'Welcome to the NgSuper generator!'
         ));
 
-        var prompts = [{
+        if(!appName){
+          prompts.push({
             type: 'input',
             name: 'appName',
             message: 'What would you like to name this app?',
             default: this.appname
-        }, {
-            type: 'confirm',
-            name: 'includeScss',
-            message: 'Would you like to include Scss in this app?',
-            default: false
-        }];
+          })
+        }
+        else{
+          this.appname = this.name;
+        }
 
         this.prompt(prompts, function(props) {
             this.appname = props.appName;
-            this.includeScss = props.includeScss;
             this.ngVer = "1.3.0";
-            this.log('You have selected ' + this.includeScss);
-
-
             done();
         }.bind(this));
     },
