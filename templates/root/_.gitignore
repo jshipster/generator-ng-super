@@ -9,3 +9,6 @@ dist/
 node_modules/
 bower_components/
 
+#SASS
+.sass-cache
+
