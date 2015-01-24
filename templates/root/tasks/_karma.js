@@ -10,6 +10,7 @@ module.exports = {
     ]
   },
   test: {
+    autoWatch: true,
     files: [
       {
         src: [
