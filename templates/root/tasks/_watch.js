@@ -19,5 +19,11 @@ module.exports = {
       '!bower_components/**/*.html'
     ],
     tasks: watchTasks
+  },
+  css:{
+    files:[
+      'styles/css/*.css'
+    ],
+    tasks: watchTasks
   }
 }

@@ -3,6 +3,6 @@ module.exports={
     options: {
       logConcurrentOutput: true
     },
-    tasks: ['watch', 'connect:server']
+    tasks: ['watch', 'connect:server', 'compass:dist']
   }
 }

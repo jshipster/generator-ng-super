@@ -60,6 +60,7 @@ var NgSuperGenerator = yeoman.generators.Base.extend({
           this.src.copy(utils.getGruntTasksTemplatePath('connect.js'),'tasks/connect.js');
           this.src.copy(utils.getGruntTasksTemplatePath('watch.js'),'tasks/watch.js');
           this.src.copy(utils.getGruntTasksTemplatePath('concurrent.js'),'tasks/concurrent.js');
+          this.src.copy(utils.getGruntTasksTemplatePath('compass.js'),'tasks/compass.js');
         }
     },
 
