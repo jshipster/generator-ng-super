@@ -10,7 +10,7 @@
   function WelcomeCtrl() {
     var vm = this;
 
-    vm.welcomeMessage = 'Welcome to ng-Super Generator ...';
+    vm.welcomeMessage = 'ZE GENGO !';
   }
 
 }());
