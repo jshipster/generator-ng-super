@@ -8,7 +8,7 @@
 	<%= component %>.$inject = [];
 
 	function <%= component %>(){
-		vm = this;
+		var vm = this;
 
 		vm.testFunction = testFunction;
 

@@ -2,6 +2,7 @@
 
 describe('Filter: <%= component %>', function () {
 
+  beforeEach(module('app.core'));
   beforeEach(module('app.<%= module %>'));
 
   var _<%= component %>;

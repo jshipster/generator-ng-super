@@ -1,9 +1,9 @@
 'use strict';
 
-describe('Controller: <%= component %>', function(){
+describe('Controller: WelcomeCtrl', function(){
 
   beforeEach(module('app.core'));
-  beforeEach(module('app.<%= module %>'));
+  beforeEach(module('app.welcome'));
 
   var _ctrl, _scope;
 
@@ -11,7 +11,7 @@ describe('Controller: <%= component %>', function(){
 
     _scope = $injector.get('$rootScope');
 
-    _ctrl = $controller('<%= component %>', {
+    _ctrl = $controller('WelcomeCtrl', {
       //add injectable services
     });
 

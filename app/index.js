@@ -12,30 +12,33 @@ var NgSuperGenerator = yeoman.generators.Base.extend({
     prompting: function() {
         var done = this.async();
         var prompts = [];
-        var appName = arguments[0];
+
+        this.appname = arguments[0];
+        this.ngVer = "1.3.0";
 
         // Have Yeoman greet the user.
         this.log(yosay(
             'Welcome to the NgSuper generator!'
         ));
 
-        if(!appName){
+        if(!this.appname){
           prompts.push({
             type: 'input',
             name: 'appName',
             message: 'What would you like to name this app?',
             default: this.appname
-          })
+          });
+
+          this.prompt(prompts, function(props) {
+            this.appname = props.appName;
+            done();
+          }.bind(this));
         }
         else{
-          this.appname = this.name;
+          done();
         }
 
-        this.prompt(prompts, function(props) {
-            this.appname = props.appName;
-            this.ngVer = "1.3.0";
-            done();
-        }.bind(this));
+
     },
 
     writing: {
@@ -52,6 +55,7 @@ var NgSuperGenerator = yeoman.generators.Base.extend({
             this.src.copy(utils.getRootTemplatePath('editorconfig'), '.editorconfig');
             this.src.copy(utils.getRootTemplatePath('jshintrc'), '.jshintrc');
             this.directory('../../templates/root/app', 'app/');
+            this.directory('../../templates/root/tests', './tests');
         },
 
         gruntFiles: function(){
@@ -61,6 +65,7 @@ var NgSuperGenerator = yeoman.generators.Base.extend({
           this.src.copy(utils.getGruntTasksTemplatePath('watch.js'),'tasks/watch.js');
           this.src.copy(utils.getGruntTasksTemplatePath('concurrent.js'),'tasks/concurrent.js');
           this.src.copy(utils.getGruntTasksTemplatePath('compass.js'),'tasks/compass.js');
+          this.src.copy(utils.getGruntTasksTemplatePath('karma.js'),'tasks/karma.js');
         }
     },
 
