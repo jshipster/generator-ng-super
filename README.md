@@ -25,7 +25,7 @@ Generates an Angular Controller for the provided Module
 yo ng-super:controller dashboard.user
 ```
 
-Produces: ```app/dashboard/UserCtrl.js```:
+Produces: ```app/src/dashboard/UserCtrl.js```:
 
 ```javascript
  (function(){
@@ -59,7 +59,7 @@ Generates an Angular Directive for the provided Module
 yo ng-super:directive common.kuSubmit
 ```
 
-Produces: ```app/common/kuSubmit.js```:
+Produces: ```app/src/common/kuSubmit.js```:
 
 ```javascript
 (function(){
@@ -100,7 +100,7 @@ Generates an Angular Factory for the provided Module
 yo ng-super:factory common.calender
 ```
 
-Produces: ```app/common/calender.js```:
+Produces: ```app/src/common/calender.js```:
 
 ```javascript
 (function(){
@@ -136,7 +136,7 @@ Generates an Angular Filter for the provided Module
 yo ng-super:filter common.currency
 ```
 
-Produces: ```app/common/currency.js```:
+Produces: ```app/src/common/currency.js```:
 
 ```javascript
 (function(){
@@ -166,7 +166,7 @@ Generates an Angular Module
 yo ng-super:feature talks
 ```
 
-Produces: ```app/talks/talks.module.js```:
+Produces: ```app/src/talks/talks.module.js```:
 
 ```javascript
 (function(){
@@ -195,7 +195,7 @@ Generates an HTML view
 yo ng-super:view dashboard.performance
 ```
 
-Produces: ```app/dashboard/performance.html```:
+Produces: ```app/src/dashboard/performance.html```:
 
 ```html
 <div> this a a sample view for dashboard.performance </div>
