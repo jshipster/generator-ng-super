@@ -12,3 +12,6 @@ bower_components/
 #SASS
 .sass-cache
 
+#tmp
+.tmp
+

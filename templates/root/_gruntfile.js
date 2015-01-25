@@ -14,5 +14,17 @@ module.exports = function (grunt) {
     'concurrent:dev'
   ]);
 
-  grunt.registerTask('test', ['karma:test'])
+  grunt.registerTask('test', ['karma:test']);
+
+  grunt.registerTask('build', [
+    'clean:dist',
+    'copy:dist',
+    'useminPrepare',
+    'concat',
+    'replace:dist',
+    'ngAnnotate:dist',
+    'uglify',
+    'cssmin',
+    'usemin'
+  ]);
 };
