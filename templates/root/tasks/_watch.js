@@ -7,16 +7,14 @@ module.exports = {
   },
   js: {
     files:[
-      '*.js',
-      '{,*/,!bower_components}/*.js',
-      '!tests/{,*/}/*.js'
+      'src/{,*/}/*.js'
     ],
     tasks: watchTasks
   },
   html:{
     files:[
       '*.html',
-      '{,*/,!bower_components}/*.html',
+      'src/{,*/}/*.html',
     ],
     tasks: watchTasks
   },

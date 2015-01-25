@@ -1,7 +1,11 @@
 'use strict';
 
+var paths       = require('./paths');
+var _           = require('lodash');
+
 module.exports = {
   getRootTemplatePath: getRootTemplatePath,
+  getAppTemplatePath: getAppTemplatePath,
   getComponentsTemplatePath: getComponentsTemplatePath,
   getComponentsTestTemplatePath: getComponentsTestTemplatePath,
   getComponentFilePath: getComponentFilePath,
@@ -13,45 +17,54 @@ module.exports = {
   doesModuleExist: doesModuleExist
 };
 
-var basePath = '../../templates/';
-var rootTemplateFolderPath = basePath + 'root/';
-var gruntTasksTemplateFolderPath = basePath + 'root/tasks/';
-var componentsTemplateFolderPath = basePath + 'components/';
-var componentsTestTemplateFolderPath = basePath + 'tests/';
+var filePaths = {
+  index: paths.destination.app + 'index.html',
+  appModule: paths.destination.src + 'app.module.js'
+}
 
-var componentsTestFolderPath = 'tests/';
-var appFolderPath = 'app/';
+var replacementTags = {
+  index:{
+    appModule: '<script src="src/app.module.js"></script>',
+    endbuild: '<!-- endbuild -->'
+  },
+  appModule:{
+    endingBrackets: ']);'
+  }
+}
 
+function getFilePath(folderPath, fileName){
+  return folderPath + '_' + fileName;
+}
+
+function getAppTemplatePath(fileName){
+  return getFilePath(paths.template.app, fileName);
+}
 
 function getRootTemplatePath(fileName){
-  return getFilePath(rootTemplateFolderPath, fileName);
+  return getFilePath(paths.template.root, fileName);
 }
 
 function getComponentsTemplatePath(fileName){
-  return getFilePath(componentsTemplateFolderPath, fileName);
+  return getFilePath(paths.template.components, fileName);
 }
 
 function getComponentsTestTemplatePath(fileName){
-  return getFilePath(componentsTestTemplateFolderPath, fileName);
+  return getFilePath(paths.template.componentTests, fileName);
+}
+
+function getGruntTasksTemplatePath(fileName){
+  return getFilePath(paths.template.gruntTasks, fileName);
 }
 
 function getComponentFilePath(module, component, isHTML){
-  var componentPath = appFolderPath + module + '/' + component;
-  componentPath += isHTML? '.html' : '.js'
+  var componentPath = paths.destination.src + module + '/' + component;
+  componentPath += isHTML? '.html' : '.js';
   return componentPath;
 
 }
 
 function getComponentTestFilePath(module, component){
-  return componentsTestFolderPath + module + '/' + component + '.js';
-}
-
-function getGruntTasksTemplatePath(fileName){
-  return getFilePath(gruntTasksTemplateFolderPath, fileName);
-}
-
-function getFilePath(folderPath, fileName){
-  return folderPath + '_' + fileName;
+  return paths.destination.tests + module + '/' + component + '.js';
 }
 
 function setModuleComponentNames(retValObject, dottedName){
@@ -66,8 +79,8 @@ function setModuleComponentNames(retValObject, dottedName){
 }
 
 function addScriptTagToIndex(self, scriptPath){
-  var pathToIndexFile = appFolderPath + 'index.html';
-  var indexReplacementTag = scriptPath.indexOf('module') !== -1? '<script src="app.module.js"></script>' : '<!-- endbuild -->';
+  var pathToIndexFile = filePaths.index;
+  var indexReplacementTag = _.contains(scriptPath, 'module')? replacementTags.index.appModule : replacementTags.index.endbuild;
   var indexFile = self.readFileAsString(pathToIndexFile);
   var splitIndexFile = indexFile.split('\n');
   var indexOfReplacementTag = indexOfTag(splitIndexFile, indexReplacementTag);
@@ -77,12 +90,12 @@ function addScriptTagToIndex(self, scriptPath){
 }
 
 function getScriptTag(scriptPath){
-  var completePathToScript = scriptPath.replace('app/','');
-  return '<script src="' + completePathToScript + '"></script>';
+  var completePathToScript = scriptPath.replace(paths.destination.src,'');
+  return '<script src="src/' + completePathToScript + '"></script>';
 }
 
 function addModuleNameToAppModule(self, moduleName){
-  var pathToAppModuleFile = appFolderPath + 'app.module.js';
+  var pathToAppModuleFile = paths.destination.src + 'app.module.js';
   var moduleReplacementTag = ']);';
   var moduleFile = self.readFileAsString(pathToAppModuleFile);
   var splitModuleFile = moduleFile.split('\n');
@@ -100,9 +113,8 @@ function addModuleNameToAppModule(self, moduleName){
 
 function indexOfTag(fileArr, tag){
   var tagIndex = -1;
-
   fileArr.forEach(function(value, index){
-    if(value.indexOf(tag) !== -1){
+    if(_.contains(value,tag)){
       tagIndex = index;
     }
   });
@@ -130,7 +142,7 @@ function insertSpaces(value, count){
 }
 
 function doesModuleExist(self, moduleName){
-  var pathToModuleFile = appFolderPath + moduleName +'/' +moduleName+ '.module.js';
+  var pathToModuleFile = paths.destination.src + moduleName +'/' +moduleName+ '.module.js';
   var shouldCreateModuleFile = true;
   try{
     var moduleFile = self.readFileAsString(pathToModuleFile);

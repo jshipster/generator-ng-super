@@ -10,7 +10,7 @@
     $stateProvider
       .state('Welcome', {
         url:'/welcome',
-        templateUrl:'welcome/welcome.html',
+        templateUrl:'src/welcome/welcome.html',
         controller: 'WelcomeCtrl as vm'
       })
   }

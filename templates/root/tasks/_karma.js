@@ -14,9 +14,9 @@ module.exports = {
     files: [
       {
         src: [
-          'app/{,*/}/*.module.js',
-          'app/{,*/,!bower_components}/*.js',
-          'tests/{,*/}/*.js'
+          'app/src/{,*/}/*.module.js', //all modules
+          'app/src/{,*/}/*.js', //all files
+          'tests/{,*/}/*.js' //all tests
         ]
       }
     ],

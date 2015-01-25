@@ -13,4 +13,6 @@ module.exports = function (grunt) {
   grunt.registerTask('server', [
     'concurrent:dev'
   ]);
+
+  grunt.registerTask('test', ['karma:test'])
 };
