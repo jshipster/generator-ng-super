@@ -54,7 +54,8 @@ Generates:
 │   ├── replace.js
 │   ├── usemin.js
 │   ├── useminPrepare.js
-│   └── watch.js
+│   ├── watch.js
+│   └── wiredep.js
 └── tests
     └── welcome
         └── WelcomeCtrl.js
