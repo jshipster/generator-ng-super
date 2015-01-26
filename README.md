@@ -15,6 +15,51 @@ cd superApp
 yo ng-super
 ```
 
+Generates:
+
+```
+├── app
+│   ├── index.html
+│   ├── src
+│   │   ├── app.module.js
+│   │   ├── common
+│   │   │   └── common.module.js
+│   │   ├── core
+│   │   │   ├── core.module.js
+│   │   │   ├── restangularConfig.js
+│   │   │   └── routerConfig.js
+│   │   └── welcome
+│   │       ├── WelcomeCtrl.js
+│   │       ├── welcome.html
+│   │       └── welcome.module.js
+│   └── styles
+│       ├── css
+│       │   └── main.css
+│       ├── main.scss
+│       └── partials
+│           ├── _skin.scss
+│           └── _welcome.scss
+├── bower.json
+├── configLoader.js
+├── gruntfile.js
+├── package.json
+├── tasks
+│   ├── clean.js
+│   ├── compass.js
+│   ├── concurrent.js
+│   ├── connect.js
+│   ├── copy.js
+│   ├── karma.js
+│   ├── ngAnnotate.js
+│   ├── replace.js
+│   ├── usemin.js
+│   ├── useminPrepare.js
+│   └── watch.js
+└── tests
+    └── welcome
+        └── WelcomeCtrl.js
+```
+
 ### Sub-generators
 
 #### Controller
