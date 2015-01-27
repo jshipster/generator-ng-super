@@ -67,7 +67,7 @@ Generates:
         └── WelcomeCtrl.js
 ```
 
-Run ```bash $ grunt server``` to run the application.
+Run ```$ grunt server``` to run the application.
 
 ### Sub-generators
 
