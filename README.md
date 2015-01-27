@@ -1,18 +1,24 @@
-# generator-ng-super [![Build Status](https://secure.travis-ci.org/umayr/generator-ng-super.png?branch=master)](https://travis-ci.org/umayr/generator-ng-super)
+# generator-ng-super
+
+To install yeoman:
+
+```bash
+$ npm install yo -g
+```
 
 To install generator-ng-super clone this repository and then:
 
 ```bash
-cd generator-ng-super
-npm install link
+$ cd generator-ng-super
+$ npm install link
 ```
 
 Finally, initiate the generator:
 
 ```bash
-mkdir superApp
-cd superApp
-yo ng-super
+$ mkdir superApp
+$ cd superApp
+$ yo ng-super
 ```
 
 Generates:
@@ -60,6 +66,8 @@ Generates:
     └── welcome
         └── WelcomeCtrl.js
 ```
+
+Run ```bash $ grunt server``` to run the application.
 
 ### Sub-generators
 
