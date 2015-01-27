@@ -66,13 +66,13 @@ var NgSuperGenerator = yeoman.generators.Base.extend({
           this.src.copy(utils.getGruntTasksTemplatePath('concurrent.js'),'tasks/concurrent.js');
           this.src.copy(utils.getGruntTasksTemplatePath('compass.js'),'tasks/compass.js');
           this.src.copy(utils.getGruntTasksTemplatePath('karma.js'),'tasks/karma.js');
-
           this.src.copy(utils.getGruntTasksTemplatePath('clean.js'),'tasks/clean.js');
           this.src.copy(utils.getGruntTasksTemplatePath('copy.js'),'tasks/copy.js');
           this.src.copy(utils.getGruntTasksTemplatePath('ngAnnotate.js'),'tasks/ngAnnotate.js');
           this.src.copy(utils.getGruntTasksTemplatePath('replace.js'),'tasks/replace.js');
           this.src.copy(utils.getGruntTasksTemplatePath('usemin.js'),'tasks/usemin.js');
           this.src.copy(utils.getGruntTasksTemplatePath('useminPrepare.js'),'tasks/useminPrepare.js');
+          this.src.copy(utils.getGruntTasksTemplatePath('wiredep.js'),'tasks/wiredep.js');
         }
     },
 
