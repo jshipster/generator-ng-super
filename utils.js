@@ -84,8 +84,9 @@ function addScriptTagToIndex(self, scriptPath){
   var indexFile = self.readFileAsString(pathToIndexFile);
   var splitIndexFile = indexFile.split('\n');
   var indexOfReplacementTag = indexOfTag(splitIndexFile, indexReplacementTag);
-  var scriptText = [getScriptTag(scriptPath), insertSpaces(indexReplacementTag, countSpaces(splitIndexFile[indexOfReplacementTag])/2)];
-  indexFile = indexFile.replace(indexReplacementTag, scriptText.join('\n'));
+  var replacingScriptTag = insertSpaces(getScriptTag(scriptPath), countSpaces(splitIndexFile[indexOfReplacementTag - 1]));
+  splitIndexFile.splice(indexOfReplacementTag, 0, replacingScriptTag);
+  indexFile = splitIndexFile.join('\n');
   self.writeFileFromString(indexFile, pathToIndexFile);
 }
 
@@ -100,35 +101,31 @@ function addModuleNameToAppModule(self, moduleName){
   var moduleFile = self.readFileAsString(pathToAppModuleFile);
   var splitModuleFile = moduleFile.split('\n');
   var indexOfModuleTag = indexOfTag(splitModuleFile, moduleReplacementTag);
-  var finalModuleReplacementTag = splitModuleFile[indexOfModuleTag];
   var placeACommaIndex = indexOfModuleTag - 1;
+  var moduleNameToBeInserted = insertSpaces("'app." + moduleName + "'", countSpaces(splitModuleFile[placeACommaIndex]));
   splitModuleFile[placeACommaIndex] = splitModuleFile[placeACommaIndex] + ',';
-  var moduleNameToBeInserted = insertSpaces("'app." + moduleName + "'", countSpaces(splitModuleFile[placeACommaIndex])/2);
+  splitModuleFile.splice(indexOfModuleTag, 0, moduleNameToBeInserted);
   moduleFile = splitModuleFile.join('\n');
-  var moduleNameText = [moduleNameToBeInserted, finalModuleReplacementTag];
-
-  moduleFile = moduleFile.replace(moduleReplacementTag,moduleNameText.join('\n'));
   self.writeFileFromString(moduleFile, pathToAppModuleFile);
 }
 
 function indexOfTag(fileArr, tag){
-  var tagIndex = -1;
-  fileArr.forEach(function(value, index){
-    if(_.contains(value,tag)){
-      tagIndex = index;
-    }
+
+  var tagIndex = _.findLastIndex(fileArr, function(value) {
+    return _.contains(value, tag) ;
   });
 
   return tagIndex;
 }
 
-function countSpaces(value){
+function countSpaces(valueArr){
   var spacesCount = 0;
-  for(var i = 0, len = value.length; i < len; i++){
-    if(value.charAt(i) === ' '){
+  _.forEach(valueArr, function(char){
+    if(char === ' ')
       spacesCount++;
-    }
-  }
+    else
+      return false; //break on first char
+  });
 
   return spacesCount;
 }
