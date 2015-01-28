@@ -1,4 +1,4 @@
-# generator-ng-super
+# generator-ng-super [![Build Status](https://travis-ci.org/mohuk/generator-ng-super.svg?branch=develop)](https://travis-ci.org/mohuk/generator-ng-super)
 
 To install yeoman:
 
