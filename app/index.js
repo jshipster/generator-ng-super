@@ -26,7 +26,7 @@ var NgSuperGenerator = yeoman.generators.Base.extend({
             type: 'input',
             name: 'appName',
             message: 'What would you like to name this app?',
-            default: this.appname
+            default: 'App'
           });
 
           this.prompt(prompts, function(props) {
