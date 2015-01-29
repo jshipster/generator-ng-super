@@ -256,13 +256,13 @@ Produces: ```app/src/dashboard/performance.html```:
 ```
 ### Grunt Tasks
 
-#### ```$ grunt server```
+##### ```$ grunt server```
 Pops up a development environment with HTML, CSS and JS Livereload
 
-#### ```$ grunt test```
+##### ```$ grunt test```
 Runs all unit tests on Karma
 
-#### ```$ grunt build```
+##### ```$ grunt build```
 Creates a ```dist``` containing a distributeable Angular App
 
 ###
