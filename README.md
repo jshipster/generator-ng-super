@@ -254,7 +254,18 @@ Produces: ```app/src/dashboard/performance.html```:
 ```html
 <div> this a a sample view for dashboard.performance </div>
 ```
+### Grunt Tasks
 
+#### ```$ grunt server```
+Pops up a development environment with HTML, CSS and JS Livereload
+
+#### ```$ grunt test```
+Runs all unit tests on Karma
+
+#### ```$ grunt build```
+Creates a ```dist``` containing a distributeable Angular App
+
+###
 ## License
 
 MIT
