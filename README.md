@@ -24,47 +24,47 @@ $ yo ng-super
 Generates:
 
 ```
-├── app
-│   ├── index.html
-│   ├── src
-│   │   ├── app.module.js
-│   │   ├── common
-│   │   │   └── common.module.js
-│   │   ├── core
-│   │   │   ├── core.module.js
-│   │   │   ├── restangularConfig.js
-│   │   │   └── routerConfig.js
-│   │   └── welcome
-│   │       ├── WelcomeCtrl.js
-│   │       ├── welcome.html
-│   │       └── welcome.module.js
-│   └── styles
-│       ├── css
-│       │   └── main.css
-│       ├── main.scss
-│       └── partials
-│           ├── _skin.scss
-│           └── _welcome.scss
-├── bower.json
-├── configLoader.js
-├── gruntfile.js
-├── package.json
-├── tasks
-│   ├── clean.js
-│   ├── compass.js
-│   ├── concurrent.js
-│   ├── connect.js
-│   ├── copy.js
-│   ├── karma.js
-│   ├── ngAnnotate.js
-│   ├── replace.js
-│   ├── usemin.js
-│   ├── useminPrepare.js
-│   ├── watch.js
-│   └── wiredep.js
-└── tests
-    └── welcome
-        └── WelcomeCtrl.js
++-- app
+¦   +-- index.html
+¦   +-- src
+¦   ¦   +-- app.module.js
+¦   ¦   +-- common
+¦   ¦   ¦   +-- common.module.js
+¦   ¦   +-- core
+¦   ¦   ¦   +-- core.module.js
+¦   ¦   ¦   +-- restangularConfig.js
+¦   ¦   ¦   +-- routerConfig.js
+¦   ¦   +-- welcome
+¦   ¦       +-- WelcomeCtrl.js
+¦   ¦       +-- welcome.html
+¦   ¦       +-- welcome.module.js
+¦   +-- styles
+¦       +-- css
+¦       ¦   +-- main.css
+¦       +-- main.scss
+¦       +-- partials
+¦           +-- _skin.scss
+¦           +-- _welcome.scss
++-- bower.json
++-- configLoader.js
++-- gruntfile.js
++-- package.json
++-- tasks
+¦   +-- clean.js
+¦   +-- compass.js
+¦   +-- concurrent.js
+¦   +-- connect.js
+¦   +-- copy.js
+¦   +-- karma.js
+¦   +-- ngAnnotate.js
+¦   +-- replace.js
+¦   +-- usemin.js
+¦   +-- useminPrepare.js
+¦   +-- watch.js
+¦   +-- wiredep.js
++-- tests
+    +-- welcome
+        +-- WelcomeCtrl.js
 ```
 
 Run ```$ grunt server``` to run the application.
@@ -151,10 +151,10 @@ Produces: ```app/src/common/kuSubmit.js```:
 Generates an Angular Factory for the provided Module
 
 ```bash
-yo ng-super:factory common.calender
+yo ng-super:factory common.calendar
 ```
 
-Produces: ```app/src/common/calender.js```:
+Produces: ```app/src/common/calendar.js```:
 
 ```javascript
 (function(){
@@ -162,11 +162,11 @@ Produces: ```app/src/common/calender.js```:
 
 	angular
 		.module('app.common')
-		.factory('calender', calender)
+		.factory('calendar', calendar)
 
-	calender.$inject = [];
+	calendar.$inject = [];
 
-	function calender(){
+	function calendar(){
 		var service = {
 			testFunction: testFunction
 		}
