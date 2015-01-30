@@ -5,8 +5,6 @@
 		.module('app.<%= module %>')
 		.factory('<%= component %>', <%= component %>)
 
-	<%= component %>.$inject = [];
-
 	function <%= component %>(){
 		var service = {
 			testFunction: testFunction

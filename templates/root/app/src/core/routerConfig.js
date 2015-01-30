@@ -5,8 +5,6 @@
   angular.module('app.core')
     .config(configuration);
 
-  configuration.$inject = ['$urlRouterProvider'];
-
   function configuration($urlRouterProvider){
 
     $urlRouterProvider.otherwise('/welcome');
