@@ -14,7 +14,7 @@ var NgSuperGenerator = yeoman.generators.Base.extend({
         var prompts = [];
 
         this.appname = arguments[0];
-        this.ngVer = "1.3.0";
+        this.ngVer = "1.3.11";
 
         // Have Yeoman greet the user.
         this.log(yosay(
