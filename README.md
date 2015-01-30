@@ -89,8 +89,6 @@ Produces: ```app/src/dashboard/UserCtrl.js```:
  		.module('app.dashboard')
  		.controller('UserCtrl', UserCtrl)
  
- 	UserCtrl.$inject = [];
- 
  	function UserCtrl(){
  		vm = this;
  
@@ -164,8 +162,6 @@ Produces: ```app/src/common/calendar.js```:
 		.module('app.common')
 		.factory('calendar', calendar)
 
-	calendar.$inject = [];
-
 	function calendar(){
 		var service = {
 			testFunction: testFunction
@@ -199,9 +195,6 @@ Produces: ```app/src/common/currency.js```:
     .module('app.common')
     .filter('currency', currency);
 
-
-  currency.$inject = [];
-
   function currency(){
     return function (input){
       return 'currency filter: ' + input;
@@ -229,8 +222,6 @@ Produces: ```app/src/talks/talks.module.js```:
   angular
     .module('app.talks', [])
     .config(configuration);
-
-  configuration.$injector = ['$stateProvider'];
 
   function configuration($stateProvider){
 
@@ -263,7 +254,7 @@ Pops up a development environment with HTML, CSS and JS Livereload
 Runs all unit tests on Karma
 
 ##### ```$ grunt build```
-Creates a ```dist``` containing a distributeable Angular App
+Creates a ```dist``` containing a distribute-able Angular App
 
 ###
 ## License

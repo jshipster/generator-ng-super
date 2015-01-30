@@ -18,11 +18,29 @@
   },
   "files": [
     "app",
-    "controller"
+    "controller",
+    "directive",
+    "factory",
+    "feature",
+    "filter",
+    "view",
+    "utils.js",
+    "paths.js"
   ],
   "keywords": [
-    "yeoman-generator"
+    "yeoman-generator",
+    "scaffold",
+    "framework",
+    "component",
+    "front-end",
+    "app",
+    "angular",
+    "ng-super"
   ],
+  bugs:{
+    "url" : "http://github.com/mohuk/generator-ng-super/issues",
+    "email" : "mohammad.umair.k@gmail.com"
+  },
   "dependencies": {
     "chalk": "^0.5.0",
     "lodash": "^2.4.1",
