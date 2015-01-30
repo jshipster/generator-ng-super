@@ -256,6 +256,9 @@ Runs all unit tests on Karma
 ##### ```$ grunt build```
 Creates a ```dist``` containing a distribute-able Angular App
 
+##### ```$ grunt bump```
+Bump application version and goodies, details at [grunt-bump](https://github.com/vojtajina/grunt-bump)
+
 ###
 ## License
 
