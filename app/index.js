@@ -7,6 +7,7 @@ var yosay = require('yosay');
 var NgSuperGenerator = yeoman.generators.Base.extend({
     initializing: function() {
         this.pkg = require('../package.json');
+        this.option('skipInstall');
     },
 
     prompting: function() {
@@ -78,7 +79,10 @@ var NgSuperGenerator = yeoman.generators.Base.extend({
     },
 
     end: function() {
-      this.installDependencies();
+      if(!this.options.skipInstall)
+        this.installDependencies();
+      else
+        console.log('Skipping installation: please run "npm install" and "bower install" to complete installation of dependencies');
     }
 });
 

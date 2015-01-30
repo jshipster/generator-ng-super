@@ -12,10 +12,7 @@ describe('app generator', function () {
     before(function (done) {
       helpers.run(path.join(__dirname, '../app'))
         .inDir(path.join(os.tmpdir(), './temp-test'))
-        .withOptions({ 'skip-install': true })
-        .withPrompt({
-          someOption: true
-        })
+        .withOptions({ 'skipInstall': true })
         .on('end', done);
     });
 
@@ -80,7 +77,7 @@ describe('app generator', function () {
       before(function (done) {
         helpers.run(path.join(__dirname, '../app'))
           .inDir(path.join(os.tmpdir(), './temp-test'))
-          .withOptions({ 'skip-install': true })
+          .withOptions({ 'skipInstall': true })
           .withPrompt({
             someOption: true
           })
@@ -96,7 +93,7 @@ describe('app generator', function () {
       before(function (done) {
         helpers.run(path.join(__dirname, '../app'))
           .inDir(path.join(os.tmpdir(), './temp-test'))
-          .withOptions({ 'skip-install': true })
+          .withOptions({ 'skipInstall': true })
           .withArguments(['foo'])
           .withPrompt({
             someOption: true
