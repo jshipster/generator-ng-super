@@ -61,6 +61,7 @@ Generates:
 ¦   +-- usemin.js
 ¦   +-- useminPrepare.js
 ¦   +-- watch.js
+¦   +-- bump.js
 ¦   +-- wiredep.js
 +-- tests
     +-- welcome
