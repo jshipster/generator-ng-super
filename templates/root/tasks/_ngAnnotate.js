@@ -4,7 +4,7 @@ module.exports = {
   },
   dist: {
       files: {
-          '.tmp/concat/scripts/app.js': ['.tmp/concat/scripts/app.js']
+          '.tmp/concat/scripts/app.js': ['.tmp/concat/scripts/app.js', '.tmp/concat/scripts/templates.js']
       }
   }
 }

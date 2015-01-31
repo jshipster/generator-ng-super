@@ -43,7 +43,8 @@ describe('app generator', function () {
         'tasks/usemin.js',
         'tasks/useminPrepare.js',
         'tasks/wiredep.js',
-        'tasks/bump.js'
+        'tasks/bump.js',
+        'tasks/html2js.js'
       ]);
     });
 

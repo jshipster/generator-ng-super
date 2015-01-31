@@ -18,6 +18,7 @@ module.exports = function (grunt) {
 
   grunt.registerTask('build', [
     'clean:dist',
+    'html2js',
     'copy:dist',
     'useminPrepare',
     'concat',

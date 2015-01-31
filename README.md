@@ -58,6 +58,7 @@ Generates:
 ¦   +-- karma.js
 ¦   +-- ngAnnotate.js
 ¦   +-- replace.js
+¦   +-- html2js.js
 ¦   +-- usemin.js
 ¦   +-- useminPrepare.js
 ¦   +-- watch.js
