@@ -1,5 +1,7 @@
 # generator-ng-super [![Build Status](https://travis-ci.org/mohuk/generator-ng-super.svg?branch=develop)](https://travis-ci.org/mohuk/generator-ng-super)
 
+Read my attempt to explain the ng-Super philosophy [here](http://blogs.mumairkhan.com/2015/02/02/generator-ng-super-philosophy.html).
+
 To install yeoman:
 
 ```bash
