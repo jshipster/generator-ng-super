@@ -3,8 +3,7 @@
   angular.module('app.welcome', [])
     .config(configuration);
 
-  configuration.$inject = ['$stateProvider'];
-
+  /* @ngInject */
   function configuration($stateProvider){
 
     $stateProvider

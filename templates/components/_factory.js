@@ -5,7 +5,8 @@
 		.module('app.<%= module %>')
 		.factory('<%= component %>', <%= component %>)
 
-	function <%= component %>(){
+  /* @ngInject */
+  function <%= component %>(){
 		var service = {
 			testFunction: testFunction
 		}

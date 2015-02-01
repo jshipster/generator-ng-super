@@ -6,6 +6,7 @@
     .module('app.<%= module %>')
     .directive('<%= component %>', <%= component %>);
 
+  /* @ngInject */
   function <%= component %>(){
 
     var directive = {

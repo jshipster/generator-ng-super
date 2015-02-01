@@ -5,10 +5,16 @@
     .module('app.<%= module %>', [])
     .config(configuration);
 
+  /* @ngInject */
   function configuration($stateProvider){
 
     //add your state mappings here
     //$stateProvider
-    //  .state();
+    //  .state('Welcome', {
+    //    url:'/welcome',
+    //    templateUrl:'src/welcome/welcome.html',
+    //    controller: 'WelcomeCtrl as vm'
+    //  }
+    //);
   }
 }());

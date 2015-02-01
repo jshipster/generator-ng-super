@@ -5,6 +5,7 @@
   angular.module('app.welcome')
     .controller('WelcomeCtrl', WelcomeCtrl);
 
+  /* @ngInject */
   function WelcomeCtrl() {
     var vm = this;
 

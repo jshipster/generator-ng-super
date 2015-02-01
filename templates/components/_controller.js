@@ -5,6 +5,7 @@
 		.module('app.<%= module %>')
 		.controller('<%= component %>', <%= component %>);
 
+  /* @ngInject */
 	function <%= component %>(){
 		var vm = this;
 
