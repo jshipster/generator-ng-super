@@ -50,7 +50,7 @@ describe('app generator', function () {
 
     it('create tests', function(){
       assert.file([
-        'tests/welcome/WelcomeCtrl.js'
+        'tests/welcome/welcome.controller.js'
       ]);
     });
 
@@ -59,9 +59,9 @@ describe('app generator', function () {
         'app/src/app.module.js',
         'app/src/common/common.module.js',
         'app/src/core/core.module.js',
-        'app/src/core/restangularConfig.js',
-        'app/src/core/routerConfig.js',
-        'app/src/welcome/WelcomeCtrl.js',
+        'app/src/core/restangular.config.js',
+        'app/src/core/router.config.js',
+        'app/src/welcome/welcome.controller.js',
         'app/src/welcome/welcome.html',
         'app/src/welcome/welcome.module.js',
         'app/styles/css/main.css',

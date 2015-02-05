@@ -6,6 +6,7 @@ var yeoman = require('yeoman-generator');
 var NgSuperGenerator = yeoman.generators.NamedBase.extend({
   initializing: function () {
     utils.setModuleComponentNames(this, this.name);
+    this.filename = this.component + '.directive';
     this.log('Directive Sub-Generator invoked');
   },
   module: function(){
@@ -17,7 +18,7 @@ var NgSuperGenerator = yeoman.generators.NamedBase.extend({
   },
   file: function () {
     var templatePath = utils.getComponentsTemplatePath('directive.js');
-    var filePath = utils.getComponentFilePath(this.module, this.component);
+    var filePath = utils.getComponentFilePath(this.module, this.filename);
     this.template.apply(this, [
       templatePath,
       filePath,

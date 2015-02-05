@@ -34,10 +34,10 @@ Generates:
 ¦   ¦   ¦   +-- common.module.js
 ¦   ¦   +-- core
 ¦   ¦   ¦   +-- core.module.js
-¦   ¦   ¦   +-- restangularConfig.js
-¦   ¦   ¦   +-- routerConfig.js
+¦   ¦   ¦   +-- restangular.config.js
+¦   ¦   ¦   +-- router.config.js
 ¦   ¦   +-- welcome
-¦   ¦       +-- WelcomeCtrl.js
+¦   ¦       +-- welcome.controller.js
 ¦   ¦       +-- welcome.html
 ¦   ¦       +-- welcome.module.js
 ¦   +-- styles
@@ -68,7 +68,7 @@ Generates:
 ¦   +-- wiredep.js
 +-- tests
     +-- welcome
-        +-- WelcomeCtrl.js
+        +-- welcome.controller.js
 ```
 
 Run ```$ grunt server``` to run the application.
@@ -83,7 +83,7 @@ Generates an Angular Controller for the provided Module
 yo ng-super:controller dashboard.user
 ```
 
-Produces: ```app/src/dashboard/UserCtrl.js```:
+Produces: ```app/src/dashboard/user.controller.js```:
 
 ```javascript
  (function(){
@@ -115,7 +115,7 @@ Generates an Angular Directive for the provided Module
 yo ng-super:directive common.kuSubmit
 ```
 
-Produces: ```app/src/common/kuSubmit.js```:
+Produces: ```app/src/common/kuSubmit.directive.js```:
 
 ```javascript
 (function(){
@@ -156,7 +156,7 @@ Generates an Angular Factory for the provided Module
 yo ng-super:factory common.calendar
 ```
 
-Produces: ```app/src/common/calendar.js```:
+Produces: ```app/src/common/calendar.factory.js```:
 
 ```javascript
 (function(){
@@ -190,7 +190,7 @@ Generates an Angular Filter for the provided Module
 yo ng-super:filter common.currency
 ```
 
-Produces: ```app/src/common/currency.js```:
+Produces: ```app/src/common/currency.filter.js```:
 
 ```javascript
 (function(){

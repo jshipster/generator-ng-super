@@ -6,6 +6,7 @@ var yeoman = require('yeoman-generator');
 var NgSuperGenerator = yeoman.generators.NamedBase.extend({
   initializing: function () {
     utils.setModuleComponentNames(this, this.name);
+    this.filename = this.component + '.factory';
     this.log('Factory Sub-Generator invoked');
   },
   module: function(){
@@ -17,7 +18,7 @@ var NgSuperGenerator = yeoman.generators.NamedBase.extend({
   },
   file: function () {
     var templatePath = utils.getComponentsTemplatePath('factory.js');
-    var filePath = utils.getComponentFilePath(this.module, this.component);
+    var filePath = utils.getComponentFilePath(this.module, this.filename);
     this.template.apply(this, [
       templatePath,
       filePath
@@ -29,7 +30,7 @@ var NgSuperGenerator = yeoman.generators.NamedBase.extend({
   test: function(){
     this.template.apply(this, [
       utils.getComponentsTestTemplatePath('factory.js'),
-      utils.getComponentTestFilePath(this.module, this.component)
+      utils.getComponentTestFilePath(this.module, this.filename)
     ]);
   }
 });

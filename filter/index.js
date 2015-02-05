@@ -6,6 +6,7 @@ var yeoman = require('yeoman-generator');
 var NgSuperGenerator = yeoman.generators.NamedBase.extend({
   initializing: function () {
     utils.setModuleComponentNames(this, this.name);
+    this.filename = this.component + '.filter';
     this.log('Filter Sub-Generator invoked');
   },
   module: function(){
@@ -17,7 +18,7 @@ var NgSuperGenerator = yeoman.generators.NamedBase.extend({
   },
   file: function () {
     var templatePath = utils.getComponentsTemplatePath('filter.js');
-    var filePath = utils.getComponentFilePath(this.module, this.component);
+    var filePath = utils.getComponentFilePath(this.module, this.filename);
 
     this.template.apply(this, [
     	templatePath,
@@ -28,7 +29,7 @@ var NgSuperGenerator = yeoman.generators.NamedBase.extend({
   },
   test: function(){
     var testTemplatePath = utils.getComponentsTestTemplatePath('filter.js');
-    var testTestTemplateFilePath = utils.getComponentTestFilePath(this.module, this.component);
+    var testTestTemplateFilePath = utils.getComponentTestFilePath(this.module, this.filename);
 
     this.template.apply(this, [
       testTemplatePath,
