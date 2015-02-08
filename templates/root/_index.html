@@ -1,8 +1,8 @@
 <!DOCTYPE html>
-<html>
+<html ng-app="app">
 <head lang="en">
   <meta charset="UTF-8">
-  <title> ngSuper </title>
+  <title ng-bind="pageTitle"></title>
   <!-- build:css styles/main.css -->
   <!-- bower:css -->
   <link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap.css" />
@@ -11,7 +11,7 @@
   <!-- endbuild -->
 </head>
 
-  <body ng-app="app" class="container">
+  <body class="container">
     <h3> ngSuper Generator </h3>
     <div ui-view></div>
   </body>
