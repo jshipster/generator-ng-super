@@ -26,54 +26,54 @@ $ yo ng-super
 Generates:
 
 ```
-+-- app
-¦   +-- index.html
-¦   +-- src
-¦   ¦   +-- app.module.js
-¦   ¦   +-- common
-¦   ¦   ¦   +-- common.module.js
-¦   ¦   +-- core
-¦   ¦   ¦   +-- core.module.js
-¦   ¦   ¦   +-- restangular.config.js
-¦   ¦   ¦   +-- router.config.js
-¦   ¦   +-- welcome
-¦   ¦       +-- welcome.controller.js
-¦   ¦       +-- welcome.html
-¦   ¦       +-- welcome.module.js
-¦   fonts
-│   ¦   +-- Kelvetica Nobis.otf
-¦   images
-│   +-- welcome
-│   ¦   +-- super-logo.jpg
-¦   +-- styles
-¦       +-- css
-¦       ¦   +-- main.css
-¦       +-- main.scss
-¦       +-- partials
-¦           +-- _skin.scss
-¦           +-- _welcome.scss
-+-- bower.json
-+-- configLoader.js
-+-- gruntfile.js
-+-- package.json
-+-- tasks
-¦   +-- clean.js
-¦   +-- compass.js
-¦   +-- concurrent.js
-¦   +-- connect.js
-¦   +-- copy.js
-¦   +-- karma.js
-¦   +-- ngAnnotate.js
-¦   +-- replace.js
-¦   +-- html2js.js
-¦   +-- usemin.js
-¦   +-- useminPrepare.js
-¦   +-- watch.js
-¦   +-- bump.js
-¦   +-- wiredep.js
-+-- tests
-    +-- welcome
-        +-- welcome.controller.js
+├── app
+│   ├── fonts
+│   │   └── Kelvetica Nobis.otf
+│   ├── images
+│   │   └── welcome
+│   │       └── super-logo.jpg
+│   ├── index.html
+│   ├── src
+│   │   ├── app.module.js
+│   │   ├── common
+│   │   │   └── common.module.js
+│   │   ├── core
+│   │   │   ├── core.module.js
+│   │   │   ├── restangular.config.js
+│   │   │   └── router.config.js
+│   │   └── welcome
+│   │       ├── welcome.controller.js
+│   │       ├── welcome.html
+│   │       └── welcome.module.js
+│   └── styles
+│       ├── css
+│       │   └── main.css
+│       ├── main.scss
+│       └── partials
+│           ├── _skin.scss
+│           └── _welcome.scss
+├── bower.json
+├── configLoader.js
+├── gruntfile.js
+├── package.json
+├── tasks
+│   ├── bump.js
+│   ├── clean.js
+│   ├── compass.js
+│   ├── concurrent.js
+│   ├── connect.js
+│   ├── copy.js
+│   ├── html2js.js
+│   ├── karma.js
+│   ├── ngAnnotate.js
+│   ├── replace.js
+│   ├── usemin.js
+│   ├── useminPrepare.js
+│   ├── watch.js
+│   └── wiredep.js
+└── tests
+    └── welcome
+        └── welcome.controller.js
 ```
 
 Run ```$ grunt server``` to run the application.
