@@ -67,7 +67,10 @@ describe('app generator', function () {
         'app/styles/css/main.css',
         'app/styles/main.scss',
         'app/styles/partials/_skin.scss',
-        'app/styles/partials/_welcome.scss'
+        'app/styles/partials/_welcome.scss',
+        'app/fonts/Kelvetica Nobis.otf',
+        'app/images/welcome/super-logo.jpg'
+
       ]);
     });
   });

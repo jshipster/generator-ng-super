@@ -19,10 +19,11 @@ module.exports = function (grunt) {
   grunt.registerTask('build', [
     'clean:dist',
     'html2js',
+    'compass:dist',
     'copy:dist',
     'useminPrepare',
     'concat',
-    'replace:dist',
+    'replace',
     'ngAnnotate:dist',
     'uglify',
     'cssmin',

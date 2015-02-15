@@ -1,5 +1,5 @@
 module.exports = {
-  dist: {
+  scripts: {
     src: ['.tmp/concat/scripts/app.js'],
     overwrite: true,
     replacements: [{
@@ -8,6 +8,17 @@ module.exports = {
     },{
       from: "angular.module('app', [",
       to: "angular.module('app', ['templates-htmlmin',"
+    }]
+  },
+  styles: {
+    src: ['dist/styles/main.css'],
+    overwrite: true,
+    replacements: [{
+      from: '../../fonts',
+      to: '../fonts'
+    },{
+      from: '../../images',
+      to: '../images'
     }]
   }
 }
