@@ -8,11 +8,10 @@ To install yeoman:
 $ npm install yo -g
 ```
 
-To install generator-ng-super clone this repository and then:
+To install generator-ng-super:
 
 ```bash
-$ cd generator-ng-super
-$ npm install link
+$ npm install -g generator-ng-super
 ```
 
 Finally, initiate the generator:
