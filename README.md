@@ -41,10 +41,10 @@ Generates:
 ¦   ¦       +-- welcome.html
 ¦   ¦       +-- welcome.module.js
 ¦   fonts
-│   +-- Kelvetica Nobis.otf
+│   ¦   +-- Kelvetica Nobis.otf
 ¦   images
 │   +-- welcome
-│       +-- super-logo.jpg
+│   ¦   +-- super-logo.jpg
 ¦   +-- styles
 ¦       +-- css
 ¦       ¦   +-- main.css
