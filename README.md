@@ -40,6 +40,11 @@ Generates:
 ¦   ¦       +-- welcome.controller.js
 ¦   ¦       +-- welcome.html
 ¦   ¦       +-- welcome.module.js
+¦   fonts
+│   +-- Kelvetica Nobis.otf
+¦   images
+│   +-- welcome
+│       +-- super-logo.jpg
 ¦   +-- styles
 ¦       +-- css
 ¦       ¦   +-- main.css
