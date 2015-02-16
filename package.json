@@ -24,6 +24,7 @@
     "feature",
     "filter",
     "view",
+    "templates",
     "utils.js",
     "paths.js"
   ],
