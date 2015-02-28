@@ -2,11 +2,50 @@
 
 Read my attempt to explain the ng-Super philosophy [here](http://blogs.mumairkhan.com/2015/02/02/generator-ng-super-philosophy.html).
 
+#Table of Contents:
+- [Development Environment Setup](#development-environment-setup)
+- [Setup ng-Super webapp](#setup-ng-super-webapp)
+- [File and folder structure](#file-and-folder-structure)
+- [Sub-Generators](#sub-generators)
+  + [Controller](#controller)
+  + [Directive](#directive)
+  + [Factory](#factory)
+  + [Filter](#filter)
+  + [Feature](#feature)
+  + [View](#view)
+- [Grunt Tasks](#grunt-tasks)
+- [Third Parties](#third-parties)
+- [FAQ](#faq)
+
+
+##Development Environment Setup
+
+Pre-requisites:
+- NodeJS
+- Yeoman
+- Bower
+- Ruby
+
 To install yeoman:
 
 ```bash
 $ npm install yo -g
 ```
+
+To install Bower
+
+```bash
+$ npm install bower -g
+```
+
+To install Compass**
+
+```bash
+$ gem install Compass
+```
+** Make sure you have Ruby installed on your machine
+
+##Setup ng-Super webapp
 
 To install generator-ng-super:
 
@@ -22,7 +61,17 @@ $ cd superApp
 $ yo ng-super
 ```
 
-Generates:
+Install project dependencies:
+
+```
+$ cd superApp
+$ npm install
+$ bower install
+```
+
+Run ```$ grunt server``` to run the application.
+
+##File and folder structure
 
 ```
 ├── app
@@ -75,9 +124,7 @@ Generates:
         └── welcome.controller.js
 ```
 
-Run ```$ grunt server``` to run the application.
-
-### Sub-generators
+##Sub-Generators
 
 #### Controller
 
@@ -91,23 +138,23 @@ Produces: ```app/src/dashboard/user.controller.js```:
 
 ```javascript
  (function(){
- 	'use strict';
+  'use strict';
  
- 	angular
- 		.module('app.dashboard')
- 		.controller('UserCtrl', UserCtrl)
+  angular
+    .module('app.dashboard')
+    .controller('UserCtrl', UserCtrl)
  
- 	function UserCtrl(){
- 		vm = this;
+  function UserCtrl(){
+    vm = this;
  
- 		vm.testFunction = testFunction;
+    vm.testFunction = testFunction;
 
-    		/////////////////////
+    /////////////////////
      
- 		function testFunction () {
- 			console.info('This is a test function');
- 		}
- 	}
+    function testFunction () {
+      console.info('This is a test function');
+    }
+  }
  }());
 ```
 
@@ -164,25 +211,25 @@ Produces: ```app/src/common/calendar.factory.js```:
 
 ```javascript
 (function(){
-	'use strict';
+  'use strict';
 
-	angular
-		.module('app.common')
-		.factory('calendar', calendar)
+  angular
+    .module('app.common')
+    .factory('calendar', calendar)
 
-	function calendar(){
-		var service = {
-			testFunction: testFunction
-		}
+  function calendar(){
+    var service = {
+      testFunction: testFunction
+    }
 
-		return service;
+    return service;
 
-		////////////////////
+    ////////////////////
 
-		function testFunction () {
-			console.info('This is a test function');
-		}
-	}
+    function testFunction () {
+      console.info('This is a test function');
+    }
+  }
 }());
 ```
 
@@ -253,7 +300,8 @@ Produces: ```app/src/dashboard/performance.html```:
 ```html
 <div> this a a sample view for dashboard.performance </div>
 ```
-### Grunt Tasks
+
+## Grunt Tasks
 
 ##### ```$ grunt server```
 Pops up a development environment with HTML, CSS and JS Livereload
@@ -267,7 +315,47 @@ Creates a ```dist``` containing a distribute-able Angular App
 ##### ```$ grunt bump```
 Bump application version and goodies, details at [grunt-bump](https://github.com/vojtajina/grunt-bump)
 
-###
+### Third Parties
+
+Following packages are pre-configured:
+
+- [Angular UI Router](https://github.com/angular-ui/ui-router)
+- [Restangular](https://github.com/mgonto/restangular)
+- [Twitter Bootstrap](http://getbootstrap.com/)
+- [UI Bootstrap](http://angular-ui.github.io/bootstrap/)
+- [Karma](http://karma-runner.github.io/0.12/index.html) with [Jasmine](http://jasmine.github.io/)
+
+### FAQ
+
+#### Why generator-ng-super?
+
+**generator-ng-super** is a heavily opinionated project that has been initiated to contain mix of best practices learned through courses and expirience. Alot of work has been shamelessly pulled in through John Papa's course of [Angular JS Patterns: Clean Code](http://www.pluralsight.com/courses/angularjs-patterns-clean-code) and its corresponding [Angular JS Style Guide](https://github.com/johnpapa/angularjs-styleguide). 
+
+It also contains a mix of packages which are best in the business pre-configured into the application structure like Angular UI's Twitter Bootstrap Directives, Angular UI's UI-Router (replacing ngRoute) and Martin Gonto's Restangular (replacing $http and $resource).
+
+The main purpose of **generator-ng-super** was to encapsulate the best from the industry experts and make it ready for use.
+
+#### Why the chosen directory structure and code pattern?
+
+The directory structure has been chosen to ease readability and search for code while keeping the directory structure flat. It corresponds to John Papa's LIFT principle of code organization.
+
+- L - Locate your code easily
+- I - Identify code at a glance
+- F - Flat structure as long as we can
+- T - Try to stay DRY
+
+#### What am I getting out of the box?
+
+**generator-ng-super** will provide a complete running Angular JS application with all the goodies like sample code, tests and packages setup in a few mins. Each sub-generator for the components provides sample code enabling the developer to get straight down to business of writing code, all the other setup configuration and code is taken care of by the generator.
+
+#### Why Angular UI Router instead of ngRoute?
+
+UI-Router contains all the missing features from the ngRouter. Visit [Angular UI Router](https://github.com/angular-ui/ui-router) for further insight.
+
+#### Why Restangular instead of $http or $resource?
+
+Restangular provides tons of goodies through which you can setup your HTTP requests in a very intuitive way. Visit [Restangular](https://github.com/mgonto/restangular) for further insight.
+
 ## License
 
 MIT
