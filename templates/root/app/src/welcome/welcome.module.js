@@ -10,7 +10,7 @@
       .state('Welcome', {
         url:'/welcome',
         templateUrl:'src/welcome/welcome.html',
-        controller: 'WelcomeCtrl as vm',
+        controller: 'Welcome as vm',
         title: 'ng-Super Welcome'
       })
   }

@@ -3,10 +3,10 @@
   'use strict';
 
   angular.module('app.welcome')
-    .controller('WelcomeCtrl', WelcomeCtrl);
+    .controller('Welcome', Welcome);
 
   /* @ngInject */
-  function WelcomeCtrl() {
+  function Welcome() {
     var vm = this;
 
     vm.welcomeMessage = 'ZE GENGO !';
