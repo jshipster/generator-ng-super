@@ -2,7 +2,7 @@
 
 Read my attempt to explain the ng-Super philosophy [here](http://blogs.mumairkhan.com/2015/02/02/generator-ng-super-philosophy.html).
 
-#Table of Contents:
+# Table of Contents:
 - [Development Environment Setup](#development-environment-setup)
 - [Setup ng-Super webapp](#setup-ng-super-webapp)
 - [File and folder structure](#file-and-folder-structure)
@@ -13,12 +13,13 @@ Read my attempt to explain the ng-Super philosophy [here](http://blogs.mumairkha
   + [Filter](#filter)
   + [Feature](#feature)
   + [View](#view)
+- [Styling and Linting](#style-lint)
 - [Grunt Tasks](#grunt-tasks)
 - [Third Parties](#third-parties)
 - [FAQ](#faq)
 
 
-##Development Environment Setup
+## Development Environment Setup
 
 Pre-requisites:
 - NodeJS
@@ -45,7 +46,7 @@ $ gem install Compass
 ```
 ** Make sure you have Ruby installed on your machine
 
-##Setup ng-Super webapp
+## Setup ng-Super webapp
 
 To install generator-ng-super:
 
@@ -71,7 +72,7 @@ $ bower install
 
 Run ```$ grunt server``` to run the application.
 
-##File and folder structure
+## File and folder structure
 
 ```
 ├── app
@@ -124,7 +125,7 @@ Run ```$ grunt server``` to run the application.
         └── welcome.controller.js
 ```
 
-##Sub-Generators
+## Sub-Generators
 
 #### Controller
 
@@ -233,7 +234,7 @@ Produces: ```app/src/common/calendar.factory.js```:
 }());
 ```
 
-###Filter
+### Filter
 
 Generates an Angular Filter for the provided Module
 
@@ -300,6 +301,9 @@ Produces: ```app/src/dashboard/performance.html```:
 ```html
 <div> this a a sample view for dashboard.performance </div>
 ```
+
+## Styling and Linting
+Generated app would contain jshint and jscs configurations. Make sure your editor is configured to take advantage of both styling and linting. 
 
 ## Grunt Tasks
 

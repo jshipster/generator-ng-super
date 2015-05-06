@@ -7,7 +7,7 @@ dist/
 
 # Dependency directory
 node_modules/
-bower_components/
+app/bower_components/
 
 #SASS
 .sass-cache
