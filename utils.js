@@ -20,17 +20,17 @@ module.exports = {
 var filePaths = {
   index: paths.destination.app + 'index.html',
   appModule: paths.destination.src + 'app.module.js'
-}
+};
 
 var replacementTags = {
   index:{
-    appModule: '<script src="src/app.module.js"></script>',
-    endbuild: '<!-- endbuild -->'
+    appModule:  '<script src="src/app.module.js"></script>',
+    endbuild:   '<!-- endbuild -->'
   },
   appModule:{
     endingBrackets: ']);'
   }
-}
+};
 
 function getFilePath(folderPath, fileName){
   return folderPath + '_' + fileName;
@@ -121,10 +121,12 @@ function indexOfTag(fileArr, tag){
 function countSpaces(valueArr){
   var spacesCount = 0;
   _.forEach(valueArr, function(char){
-    if(char === ' ')
+    if(char === ' '){
       spacesCount++;
-    else
+    }
+    else{
       return false; //break on first char
+    }
   });
 
   return spacesCount;

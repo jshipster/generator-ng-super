@@ -12,10 +12,7 @@
         templateUrl:'src/welcome/welcome.html',
         controller: 'Welcome as vm',
         title: 'ng-Super Welcome'
-      })
+      });
   }
 
-
 }());
-
-

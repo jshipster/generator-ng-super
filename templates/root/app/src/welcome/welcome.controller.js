@@ -6,7 +6,7 @@
     .controller('Welcome', Welcome);
 
   /* @ngInject */
-  function Welcome() {
+  function Welcome(){
     var vm = this;
 
     vm.welcomeMessage = 'ZE GENGO !';

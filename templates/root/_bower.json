@@ -6,15 +6,14 @@
     "angular": "~<%= ngVer %>",
     "angular-sanitize": "~<%= ngVer %>",
     "angular-animate": "~<%= ngVer %>",
-    "angular-ui-router": "~0.2.13",
+    "angular-ui-router": "~0.2.14",
     "jquery":"~2.1.1",
     "restangular": "~1.4.0",
     "bootstrap": "~3.2.0",
-    "angular-bootstrap": "~0.11.2"
+    "angular-bootstrap": "~0.13.0"
   },
   "devDependencies": {
-    "angular-mocks": "~<%= ngVer %>",
-    "angular-scenario": "~<%= ngVer %>"
+    "angular-mocks": "~<%= ngVer %>"
   }
 }
 

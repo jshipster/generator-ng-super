@@ -15,7 +15,7 @@ var NgSuperGenerator = yeoman.generators.Base.extend({
         var prompts = [];
 
         this.appname = arguments[0];
-        this.ngVer = "1.3.11";
+        this.ngVer = "1.3.15";
 
         // Have Yeoman greet the user.
         this.log(yosay(
@@ -53,8 +53,9 @@ var NgSuperGenerator = yeoman.generators.Base.extend({
         },
 
         projectfiles: function() {
-            this.src.copy(utils.getRootTemplatePath('editorconfig'), '.editorconfig');
-            this.src.copy(utils.getRootTemplatePath('jshintrc'), '.jshintrc');
+            this.src.copy(utils.getRootTemplatePath('.editorconfig'), '.editorconfig');
+            this.src.copy(utils.getRootTemplatePath('.jshintrc'), '.jshintrc');
+            this.src.copy(utils.getRootTemplatePath('.jscsrc'), '.jscsrc');
             this.directory('../../templates/root/app', 'app/');
             this.directory('../../templates/root/tests', './tests');
         },
