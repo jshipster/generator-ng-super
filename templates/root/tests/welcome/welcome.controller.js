@@ -1,24 +1,30 @@
-'use strict';
+(function(){
 
-describe('Controller: WelcomeCtrl', function(){
+  /* global module, inject */
 
-  beforeEach(module('app.core'));
-  beforeEach(module('app.welcome'));
+  'use strict';
 
-  var _ctrl, _scope;
+  describe('Controller: WelcomeCtrl', function(){
 
-  beforeEach(inject(function($controller, $injector){
+    beforeEach(module('app.core'));
+    beforeEach(module('app.welcome'));
 
-    _scope = $injector.get('$rootScope');
+    var ctrl;
+    var scope;
 
-    _ctrl = $controller('WelcomeCtrl', {
-      //add injectable services
+    beforeEach(inject(function($controller, $injector){
+
+      scope = $injector.get('$rootScope');
+      ctrl = $controller('WelcomeCtrl', {
+        //add injectable services
+      });
+
+    }));
+
+    it('should do nothing', function (){
+      expect(true).toBe(false);
     });
 
-  }));
-
-  it('should do nothing', function (){
-    expect(true).toBe(false);
   });
-});
+}());
 

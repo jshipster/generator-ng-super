@@ -1,4 +1,5 @@
 (function(){
+
   'use strict';
 
   angular
@@ -17,4 +18,5 @@
     //  }
     //);
   }
+
 }());

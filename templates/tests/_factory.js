@@ -1,20 +1,25 @@
-'use strict';
+(function(){
 
-describe('Factory: <%= component %>', function(){
+  /* global module, inject */
 
-  beforeEach(module('app.core'));
-  beforeEach(module('app.<%= module %>'));
+  'use strict';
 
-  var _<%= component %>;
+  describe('Factory: <%= component %>', function(){
 
-  beforeEach(inject(function($injector){
+    beforeEach(module('app.core'));
+    beforeEach(module('app.<%= module %>'));
 
-    _<%= component %> = $injector.get('<%= component %>');
+    var <%= component %>;
 
-  }));
+    beforeEach(inject(function($injector){
 
-  it('should do nothing', function (){
-    expect(true).toBe(false);
+      <%= component %> = $injector.get('<%= component %>');
+
+    }));
+
+    it('should do nothing', function(){
+      expect(true).toBe(false);
+    });
+
   });
-});
-
+}());

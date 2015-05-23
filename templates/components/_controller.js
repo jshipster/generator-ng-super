@@ -1,5 +1,6 @@
 (function(){
-	'use strict';
+
+  'use strict';
 
 	angular
 		.module('app.<%= module %>')
@@ -13,8 +14,9 @@
 
     /////////////////////
 
-		function testFunction () {
+		function testFunction(){
 			console.info('This is a test function');
 		}
 	}
+
 }());

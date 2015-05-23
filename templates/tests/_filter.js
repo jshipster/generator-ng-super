@@ -1,18 +1,25 @@
-'use strict';
+(function(){
 
-describe('Filter: <%= component %>', function () {
+  /* global module, inject */
 
-  beforeEach(module('app.core'));
-  beforeEach(module('app.<%= module %>'));
+  'use strict';
 
-  var _<%= component %>;
+  describe('Filter: <%= component %>', function(){
 
-  beforeEach(inject(function (<%= component %>Filter) {
-    _<%= component %> = <%= component %>Filter;
-  }));
+    beforeEach(module('app.core'));
+    beforeEach(module('app.<%= module %>'));
 
-  it('should not do anything for now', function () {
-    expect(true).toBe(false);
+    var <%= component %>;
+
+    beforeEach(inject(function (<%= component %>Filter){
+
+      <%= component %> = <%= component %>Filter;
+
+    }));
+
+    it('should not do anything for now', function(){
+      expect(true).toBe(false);
+    });
+
   });
-
-});
+}());

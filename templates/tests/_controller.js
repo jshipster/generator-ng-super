@@ -1,24 +1,30 @@
-'use strict';
+(function(){
 
-describe('Controller: <%= component %>', function(){
+  /* global module, inject */
 
-  beforeEach(module('app.core'));
-  beforeEach(module('app.<%= module %>'));
+  'use strict';
 
-  var _ctrl, _scope;
+  describe('Controller: <%= component %>', function(){
 
-  beforeEach(inject(function($controller, $injector){
+    beforeEach(module('app.core'));
+    beforeEach(module('app.<%= module %>'));
 
-    _scope = $injector.get('$rootScope');
+    var ctrl;
+    var scope;
 
-    _ctrl = $controller('<%= component %>', {
-      //add injectable services
+    beforeEach(inject(function($controller, $injector){
+
+      scope = $injector.get('$rootScope');
+
+      ctrl = $controller('<%= component %>', {
+        //add injectable services
+      });
+
+    }));
+
+    it('should do nothing', function(){
+      expect(true).toBe(false);
     });
 
-  }));
-
-  it('should do nothing', function (){
-    expect(true).toBe(false);
   });
-});
-
+}());
