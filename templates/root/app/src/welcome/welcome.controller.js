@@ -1,3 +1,10 @@
+/**
+ * @ngdoc controller
+ * @module app.welcome
+ * @name Welcome
+ * @description Welcome controller which typically is useless and you are going to delete it
+ */
+
 (function(){
 
   'use strict';

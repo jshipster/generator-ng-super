@@ -1,3 +1,10 @@
+/**
+ * @ngdoc config
+ * @module app.core
+ * @name app.core
+ * @description core Restangular configurations
+ */
+
 (function(){
 
   'use strict';

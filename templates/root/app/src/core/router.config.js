@@ -1,3 +1,10 @@
+/**
+ * @ngdoc config
+ * @module app.core
+ * @name app.core
+ * @description application core configurations with providers
+ */
+
 (function(){
 
   'use strict';
