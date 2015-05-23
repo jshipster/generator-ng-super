@@ -3,7 +3,7 @@ module.exports = {
     quoteChar: '\'',
     singleModule: true,
     base: 'app',
-    rename: function (moduleName) {
+    rename: function (moduleName){
       return moduleName.replace(/src\/[a-zA-Z0-9]*\//g, 'views/');
     }
   },
@@ -15,12 +15,11 @@ module.exports = {
         removeAttributeQuotes: true,
         removeComments: true,
         removeEmptyAttributes: true,
-        removeRedundantAttributes: true,
         removeScriptTypeAttributes: true,
         removeStyleLinkTypeAttributes: true
       }
     },
-    src: ['app/src/{,*/}/*.html'],
+    src: ['app/src/{,*/}*/*.html'],
     dest: '.tmp/concat/scripts/templates.js'
-  },
-}
+  }
+};

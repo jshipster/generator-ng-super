@@ -1,14 +1,15 @@
 module.exports = {
   scripts: {
-    src: ['.tmp/concat/scripts/app.js'],
+    src: ['.tmp/concat/scripts/*.js'],
     overwrite: true,
     replacements: [{
       from: /src\/[a-zA-Z0-9]*\//g,
       to: 'views/'
-    },{
-      from: "angular.module('app', [",
-      to: "angular.module('app', ['templates-htmlmin',"
-    }]
+    },
+      {
+        from: "angular.module('app', [",
+        to: "angular.module('app', ['templates-htmlmin',"
+      }]
   },
   styles: {
     src: ['dist/styles/main.css'],
@@ -16,9 +17,10 @@ module.exports = {
     replacements: [{
       from: '../../fonts',
       to: '../fonts'
-    },{
-      from: '../../images',
-      to: '../images'
-    }]
+    },
+      {
+        from: '../../images',
+        to: '../images'
+      }]
   }
-}
+};
