@@ -18,7 +18,7 @@
   function <%= component %>(){
     return function (input){
       return '<%= component %> filter: ' + input;
-    }
+    };
   }
 
 }());

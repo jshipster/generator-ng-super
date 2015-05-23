@@ -18,7 +18,7 @@
   /* @ngInject */
   function <%= component %>(){
 
-    var directive = {
+    return {
       link: link,
       restrict: 'E',
       template: '<div></div>',
@@ -26,8 +26,6 @@
 
       }
     };
-
-    return directive;
 
     /////////////////////
 
