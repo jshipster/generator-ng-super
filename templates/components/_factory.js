@@ -1,3 +1,11 @@
+/**
+ * @ngdoc factory
+ * @module app.<%= module %>
+ * @name <%= component %>
+ * @description < description placeholder >
+ * @returns {object} < returns placeholder >
+ */
+
 (function(){
 
   'use strict';
@@ -8,11 +16,9 @@
 
   /* @ngInject */
   function <%= component %>(){
-		var service = {
+		return {
 			testFunction: testFunction
 		};
-
-		return service;
 
 		////////////////////
 

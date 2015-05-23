@@ -1,3 +1,10 @@
+/**
+ * @ngdoc module
+ * @module app.<%= module %>
+ * @name app.<%= module %>
+ * @description < description placeholder >
+ */
+
 (function(){
 
   'use strict';

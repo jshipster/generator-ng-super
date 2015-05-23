@@ -1,3 +1,11 @@
+/**
+ * @ngdoc filter
+ * @module app.<%= module %>
+ * @name <%= component %>
+ * @description < description placeholder >
+ * @returns {function} < returns placeholder >
+ */
+
 (function(){
 
   'use strict';

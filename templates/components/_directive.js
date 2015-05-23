@@ -1,3 +1,12 @@
+/**
+ * @ngdoc directive
+ * @module app.<%= module %>
+ * @name <%= component %>
+ * @restrict E
+ * @scope true
+ * @description < description placeholder >
+ */
+
 (function(){
 
   'use strict';
@@ -11,7 +20,7 @@
 
     var directive = {
       link: link,
-      restrict: 'EA',
+      restrict: 'E',
       template: '<div></div>',
       scope: {
 
