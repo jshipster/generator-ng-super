@@ -33,15 +33,8 @@
     "afterConsequent": true,
     "beforeAlternate": true
   },
-  "disallowSpacesInFunctionDeclaration": {
-    "beforeOpeningRoundBrace": true,
-    "beforeOpeningCurlyBrace": true
-  },
-  "disallowSpacesInFunctionExpression": {
-    "beforeOpeningRoundBrace": true,
-    "beforeOpeningCurlyBrace": true
-  },
+
   "validateParameterSeparator": ", ",
   "validateQuoteMarks": { "mark": "'", "escape": true },
-  "maximumLineLength": 100
+  "maximumLineLength": 120
 }
