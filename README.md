@@ -10,6 +10,8 @@ Read my attempt to explain the ng-Super philosophy [here](http://blogs.mumairkha
   + [Controller](#controller)
   + [Directive](#directive)
   + [Factory](#factory)
+  + [Constant](#constant)
+  + [Value](#value)
   + [Filter](#filter)
   + [Feature](#feature)
   + [View](#view)
@@ -228,6 +230,72 @@ Produces: ```app/src/common/calendar.factory.js```:
       console.info('This is a test function');
     }
   }
+}());
+```
+
+#### Constant
+
+Generates an Angular Constant for the provided Module
+
+```bash
+yo ng-super:constant common.errorMessages
+```
+
+Produces: ```app/src/common/errorMessages.constant.js```:
+
+```javascript
+/**
+ * @ngdoc constant
+ * @module app.common
+ * @name errorMessages
+ * @description < description placeholder >
+ */
+
+(function(){
+
+  'use strict';
+
+  var errorMessages = {
+    someConstant: 'hasSomeValue'
+  };
+
+  angular
+	  .module('app.common')
+	  .constant('errorMessages', errorMessages);
+
+}());
+```
+
+#### Value
+
+Generates an Angular Value for the provided Module
+
+```bash
+yo ng-super:value core.appId
+```
+
+Produces: ```app/src/core/appId.value.js```:
+
+```javascript
+/**
+ * @ngdoc value
+ * @module app.core
+ * @name appId
+ * @description < description placeholder >
+ */
+
+(function(){
+
+  'use strict';
+
+  var appId = {
+    someValue: 'obviouslyHasSomeValue'
+  };
+
+  angular
+	  .module('app.core')
+	  .value('appId', appId);
+
 }());
 ```
 
