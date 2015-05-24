@@ -141,25 +141,36 @@ yo ng-super:controller dashboard.user
 Produces: ```app/src/dashboard/user.controller.js```:
 
 ```javascript
- (function(){
+/**
+ * @ngdoc controller
+ * @module app.dashboard
+ * @name User
+ * @description < description placeholder >
+ */
+
+(function(){
+
   'use strict';
- 
-  angular
-    .module('app.dashboard')
-    .controller('UserCtrl', UserCtrl)
- 
-  function UserCtrl(){
-    vm = this;
- 
-    vm.testFunction = testFunction;
+
+	angular
+		.module('app.dashboard')
+		.controller('User', User);
+
+  /* @ngInject */
+	function User(){
+		var vm = this;
+
+		vm.testFunction = testFunction;
 
     /////////////////////
-     
-    function testFunction () {
-      console.info('This is a test function');
-    }
-  }
- }());
+
+		function testFunction(){
+			console.info('This is a test function');
+		}
+	}
+
+}());
+
 ```
 
 #### Directive
@@ -173,6 +184,15 @@ yo ng-super:directive common.kuSubmit
 Produces: ```app/src/common/kuSubmit.directive.js```:
 
 ```javascript
+/**
+ * @ngdoc directive
+ * @module app.common
+ * @name kuSubmit
+ * @restrict E
+ * @scope true
+ * @description < description placeholder >
+ */
+
 (function(){
 
   'use strict';
@@ -181,11 +201,12 @@ Produces: ```app/src/common/kuSubmit.directive.js```:
     .module('app.common')
     .directive('kuSubmit', kuSubmit);
 
+  /* @ngInject */
   function kuSubmit(){
 
     return {
       link: link,
-      restrict: 'EA',
+      restrict: 'E',
       template: '<div></div>',
       scope: {
 
@@ -194,11 +215,13 @@ Produces: ```app/src/common/kuSubmit.directive.js```:
 
     /////////////////////
 
-    function link (scope, elem, attrs){
+    function link(scope, elem, attrs){
       console.info('This is a link function of the directive');
     }
   }
+
 }());
+
 ```
 
 #### Factory
@@ -212,25 +235,37 @@ yo ng-super:factory common.calendar
 Produces: ```app/src/common/calendar.factory.js```:
 
 ```javascript
+/**
+ * @ngdoc factory
+ * @module app.common
+ * @name calendar
+ * @description < description placeholder >
+ * @returns {object} < returns placeholder >
+ */
+
 (function(){
+
   'use strict';
 
-  angular
-    .module('app.common')
-    .factory('calendar', calendar)
+	angular
+		.module('app.common')
+		.factory('calendar', calendar);
 
+  /* @ngInject */
   function calendar(){
-    return {
-      testFunction: testFunction
-    }
+		return {
+			testFunction: testFunction
+		};
 
-    ////////////////////
+		////////////////////
 
-    function testFunction () {
-      console.info('This is a test function');
-    }
-  }
+		function testFunction(){
+			console.info('This is a test function');
+		}
+	}
+
 }());
+
 ```
 
 #### Constant
@@ -310,19 +345,31 @@ yo ng-super:filter common.currency
 Produces: ```app/src/common/currency.filter.js```:
 
 ```javascript
+/**
+ * @ngdoc filter
+ * @module app.common
+ * @name currency
+ * @description < description placeholder >
+ * @returns {function} < returns placeholder >
+ */
+
 (function(){
+
+  'use strict';
 
   angular
     .module('app.common')
     .filter('currency', currency);
 
+  /* @ngInject */
   function currency(){
     return function (input){
       return 'currency filter: ' + input;
-    }
+    };
   }
 
 }());
+
 ```
 
 
@@ -337,20 +384,36 @@ yo ng-super:feature talks
 Produces: ```app/src/talks/talks.module.js```:
 
 ```javascript
+/**
+ * @ngdoc module
+ * @module app.talks
+ * @name app.talks
+ * @description < description placeholder >
+ */
+
 (function(){
+
   'use strict';
 
   angular
     .module('app.talks', [])
     .config(configuration);
 
+  /* @ngInject */
   function configuration($stateProvider){
 
     //add your state mappings here
     //$stateProvider
-    //  .state();
+    //  .state('Welcome', {
+    //    url:'/welcome',
+    //    templateUrl:'src/welcome/welcome.html',
+    //    controller: 'WelcomeCtrl as vm'
+    //  }
+    //);
   }
+
 }());
+
 ```
 
 #### View

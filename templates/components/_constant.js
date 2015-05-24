@@ -18,4 +18,3 @@
 		.constant('<%= component %>', <%= component %>);
 
 }());
-
