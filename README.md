@@ -89,6 +89,7 @@ Run ```$ grunt server``` to run the application.
 │   │   ├── core
 │   │   │   ├── core.module.js
 │   │   │   ├── restangular.config.js
+│   │   │   ├── httpStatus.constant.js
 │   │   │   └── router.config.js
 │   │   └── welcome
 │   │       ├── welcome.controller.js
@@ -180,7 +181,7 @@ Produces: ```app/src/common/kuSubmit.directive.js```:
 
   function kuSubmit(){
 
-    var directive = {
+    return {
       link: link,
       restrict: 'EA',
       template: '<div></div>',
@@ -188,8 +189,6 @@ Produces: ```app/src/common/kuSubmit.directive.js```:
 
       }
     };
-
-    return directive;
 
     /////////////////////
 
@@ -219,11 +218,9 @@ Produces: ```app/src/common/calendar.factory.js```:
     .factory('calendar', calendar)
 
   function calendar(){
-    var service = {
+    return {
       testFunction: testFunction
     }
-
-    return service;
 
     ////////////////////
 

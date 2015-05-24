@@ -61,6 +61,7 @@ describe('app generator', function () {
         'app/src/core/core.module.js',
         'app/src/core/restangular.config.js',
         'app/src/core/router.config.js',
+        'app/src/core/httpStatus.constant.js',
         'app/src/welcome/welcome.controller.js',
         'app/src/welcome/welcome.html',
         'app/src/welcome/welcome.module.js',
