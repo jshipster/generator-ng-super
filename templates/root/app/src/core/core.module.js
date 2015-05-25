@@ -1,8 +1,7 @@
 /**
- * @ngdoc module
- * @module app.core
+ * @ngdoc overview
  * @name app.core
- * @description Module for core configurations of the application
+ * @description Core is where the Magma is
  */
 
 (function(){

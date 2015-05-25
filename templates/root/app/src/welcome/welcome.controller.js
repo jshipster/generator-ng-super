@@ -1,7 +1,6 @@
 /**
  * @ngdoc controller
- * @module app.welcome
- * @name Welcome
+ * @name app.welcome.controller:Welcome
  * @description Welcome controller which typically is useless and you are going to delete it
  */
 
@@ -17,6 +16,22 @@
     var vm = this;
 
     vm.welcomeMessage = 'ZE GENGO !';
+    vm.testFunction = testFunction;
+
+    /////////////////////
+
+    /**
+     * @ngdoc method
+     * @name testFunction
+     * @param {number} num number is the number of the number
+     * @methodOf app.welcome.controller:Welcome
+     * @description
+     * My Description rules
+     */
+
+    function testFunction(num){
+      console.info('This is a test function number ' + num);
+    }
   }
 
 }());
