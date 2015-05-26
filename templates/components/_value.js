@@ -1,8 +1,17 @@
 /**
- * @ngdoc value
- * @module app.<%= module %>
- * @name <%= component %>
+ * @ngdoc object
+ * @name app.<%= module %>.constant:<%= component %>
  * @description < description placeholder >
+ * @example
+ <pre>
+ angular.module("someModule", [])
+ .controller("some", controller);
+
+ function controller(<%= component %>, someService){
+  var vm = this;
+  //use the injected constant
+  };
+ </pre>
  */
 
 (function(){

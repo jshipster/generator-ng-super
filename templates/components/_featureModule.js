@@ -1,6 +1,5 @@
 /**
- * @ngdoc module
- * @module app.<%= module %>
+ * @ngdoc overview
  * @name app.<%= module %>
  * @description < description placeholder >
  */

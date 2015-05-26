@@ -1,9 +1,7 @@
 /**
- * @ngdoc factory
- * @module app.<%= module %>
- * @name <%= component %>
+ * @ngdoc service
+ * @name app.<%= module %>.<%= component %>
  * @description < description placeholder >
- * @returns {object} < returns placeholder >
  */
 
 (function(){
@@ -22,7 +20,20 @@
 
 		////////////////////
 
-		function testFunction(){
+    /**
+     * @ngdoc
+     * @name app.<%= module %>.<%= component %>#testFunction
+     * @methodOf app.<%= module %>.<%= component %>
+     *
+     * @description < description placeholder >
+     * @example
+     * <pre>
+     * <%= component %>.testFunction(id);
+     * </pre>
+     * @param {int} entity id
+     */
+
+		function testFunction(id){
 			console.info('This is a test function');
 		}
 	}

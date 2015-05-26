@@ -1,8 +1,7 @@
 /**
- * @ngdoc config
- * @module app.core
+ * @ngdoc overview
  * @name app.core
- * @description application core configurations with providers
+ * @description Configuration block for routing
  */
 
 (function(){

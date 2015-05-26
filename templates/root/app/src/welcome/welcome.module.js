@@ -1,8 +1,9 @@
 /**
- * @ngdoc module
- * @module app.welcome
+ * @ngdoc overview
  * @name app.welcome
- * @description module to kickoff and later delete
+ * @description Welcome module defines the config block and state router configurations
+ *              Following urls are configured with in this block
+ *              1. '/welcome'
  */
 
 (function(){

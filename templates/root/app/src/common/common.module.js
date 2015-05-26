@@ -1,8 +1,7 @@
 /**
- * @ngdoc module
- * @module app.common
+ * @ngdoc overview
  * @name app.common
- * @description host of cross cutting components
+ * @description Host of all the cross cutting source
  */
 
 (function(){

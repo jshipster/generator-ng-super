@@ -1,9 +1,9 @@
 /**
  * @ngdoc filter
- * @module app.<%= module %>
- * @name <%= component %>
+ * @name app.<%= module %>.filer:<%= component %>
  * @description < description placeholder >
- * @returns {function} < returns placeholder >
+ * @param {object} input object to be filtered
+ * @returns {object} < returns placeholder >
  */
 
 (function(){

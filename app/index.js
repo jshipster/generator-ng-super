@@ -5,12 +5,12 @@ var yeoman = require('yeoman-generator');
 var yosay = require('yosay');
 
 var NgSuperGenerator = yeoman.generators.Base.extend({
-    initializing: function() {
+    initializing: function(){
         this.pkg = require('../package.json');
         this.option('skipInstall');
     },
 
-    prompting: function() {
+    prompting: function(){
         var done = this.async();
         var prompts = [];
 
@@ -30,7 +30,7 @@ var NgSuperGenerator = yeoman.generators.Base.extend({
             default: 'App'
           });
 
-          this.prompt(prompts, function(props) {
+          this.prompt(prompts, function(props){
             this.appname = props.appName;
             done();
           }.bind(this));
@@ -39,20 +39,19 @@ var NgSuperGenerator = yeoman.generators.Base.extend({
           done();
         }
 
-
     },
 
     writing: {
-        app: function() {
+        app: function(){
             this.template.apply(this, [utils.getRootTemplatePath('package.json'), 'package.json']);
             this.template.apply(this, [utils.getRootTemplatePath('bower.json'), 'bower.json']);
-            this.template.apply(this, [utils.getRootTemplatePath('index.html'),'app/index.html']);
-            this.src.copy(utils.getRootTemplatePath('.gitignore'),'.gitignore');
-            this.src.copy(utils.getRootTemplatePath('.bowerrc'),'.bowerrc');
+            this.template.apply(this, [utils.getRootTemplatePath('index.html'), 'app/index.html']);
+            this.src.copy(utils.getRootTemplatePath('.gitignore'), '.gitignore');
+            this.src.copy(utils.getRootTemplatePath('.bowerrc'), '.bowerrc');
 
         },
 
-        projectfiles: function() {
+        projectfiles: function(){
             this.src.copy(utils.getRootTemplatePath('.editorconfig'), '.editorconfig');
             this.src.copy(utils.getRootTemplatePath('.jshintrc'), '.jshintrc');
             this.src.copy(utils.getRootTemplatePath('.jscsrc'), '.jscsrc');
@@ -61,26 +60,27 @@ var NgSuperGenerator = yeoman.generators.Base.extend({
         },
 
         gruntFiles: function(){
-          this.src.copy(utils.getRootTemplatePath('configLoader.js'),'configLoader.js');
+          this.src.copy(utils.getRootTemplatePath('configLoader.js'), 'configLoader.js');
           this.src.copy(utils.getRootTemplatePath('gruntfile.js'), 'gruntfile.js');
-          this.src.copy(utils.getGruntTasksTemplatePath('connect.js'),'tasks/connect.js');
-          this.src.copy(utils.getGruntTasksTemplatePath('watch.js'),'tasks/watch.js');
-          this.src.copy(utils.getGruntTasksTemplatePath('concurrent.js'),'tasks/concurrent.js');
-          this.src.copy(utils.getGruntTasksTemplatePath('compass.js'),'tasks/compass.js');
-          this.src.copy(utils.getGruntTasksTemplatePath('karma.js'),'tasks/karma.js');
-          this.src.copy(utils.getGruntTasksTemplatePath('clean.js'),'tasks/clean.js');
-          this.src.copy(utils.getGruntTasksTemplatePath('copy.js'),'tasks/copy.js');
-          this.src.copy(utils.getGruntTasksTemplatePath('ngAnnotate.js'),'tasks/ngAnnotate.js');
-          this.src.copy(utils.getGruntTasksTemplatePath('replace.js'),'tasks/replace.js');
-          this.src.copy(utils.getGruntTasksTemplatePath('usemin.js'),'tasks/usemin.js');
-          this.src.copy(utils.getGruntTasksTemplatePath('useminPrepare.js'),'tasks/useminPrepare.js');
-          this.src.copy(utils.getGruntTasksTemplatePath('wiredep.js'),'tasks/wiredep.js');
-          this.src.copy(utils.getGruntTasksTemplatePath('bump.js'),'tasks/bump.js');
-          this.src.copy(utils.getGruntTasksTemplatePath('html2js.js'),'tasks/html2js.js');
+          this.src.copy(utils.getGruntTasksTemplatePath('connect.js'), 'tasks/connect.js');
+          this.src.copy(utils.getGruntTasksTemplatePath('watch.js'), 'tasks/watch.js');
+          this.src.copy(utils.getGruntTasksTemplatePath('concurrent.js'), 'tasks/concurrent.js');
+          this.src.copy(utils.getGruntTasksTemplatePath('compass.js'), 'tasks/compass.js');
+          this.src.copy(utils.getGruntTasksTemplatePath('ngdocs.js'), 'tasks/ngdocs.js');
+          this.src.copy(utils.getGruntTasksTemplatePath('karma.js'), 'tasks/karma.js');
+          this.src.copy(utils.getGruntTasksTemplatePath('clean.js'), 'tasks/clean.js');
+          this.src.copy(utils.getGruntTasksTemplatePath('copy.js'), 'tasks/copy.js');
+          this.src.copy(utils.getGruntTasksTemplatePath('ngAnnotate.js'), 'tasks/ngAnnotate.js');
+          this.src.copy(utils.getGruntTasksTemplatePath('replace.js'), 'tasks/replace.js');
+          this.src.copy(utils.getGruntTasksTemplatePath('usemin.js'), 'tasks/usemin.js');
+          this.src.copy(utils.getGruntTasksTemplatePath('useminPrepare.js'), 'tasks/useminPrepare.js');
+          this.src.copy(utils.getGruntTasksTemplatePath('wiredep.js'), 'tasks/wiredep.js');
+          this.src.copy(utils.getGruntTasksTemplatePath('bump.js'), 'tasks/bump.js');
+          this.src.copy(utils.getGruntTasksTemplatePath('html2js.js'), 'tasks/html2js.js');
         }
     },
 
-    end: function() {
+    end: function(){
       if(!this.options.skipInstall)
         this.installDependencies();
       else

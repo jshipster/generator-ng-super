@@ -1,6 +1,7 @@
 # generator-ng-super [![Build Status](https://travis-ci.org/mohuk/generator-ng-super.svg?branch=develop)](https://travis-ci.org/mohuk/generator-ng-super)
 
-Read my attempt to explain the ng-Super philosophy [here](http://blogs.mumairkhan.com/2015/02/02/generator-ng-super-philosophy.html).
+# Credit where it is due:
+Alot of work has been shamelessly pulled in through John Papa's course of [Angular JS Patterns: Clean Code](http://www.pluralsight.com/courses/angularjs-patterns-clean-code) and its corresponding [Angular JS Style Guide](https://github.com/johnpapa/angularjs-styleguide).
 
 # Table of Contents:
 - [Development Environment Setup](#development-environment-setup)
@@ -143,8 +144,7 @@ Produces: ```app/src/dashboard/user.controller.js```:
 ```javascript
 /**
  * @ngdoc controller
- * @module app.dashboard
- * @name User
+ * @name app.dashboard.controller:User
  * @description < description placeholder >
  */
 
@@ -152,22 +152,30 @@ Produces: ```app/src/dashboard/user.controller.js```:
 
   'use strict';
 
-	angular
-		.module('app.dashboard')
-		.controller('User', User);
+  angular
+    .module('app.dashboard')
+    .controller('User', User);
 
   /* @ngInject */
-	function User(){
-		var vm = this;
+  function User(){
+    var vm = this;
 
-		vm.testFunction = testFunction;
+    vm.testFunction = testFunction;
 
     /////////////////////
 
-		function testFunction(){
-			console.info('This is a test function');
-		}
-	}
+    /**
+     * @ngdoc method
+     * @name testFunction
+     * @param {number} num number is the number of the number
+     * @methodOf app.dashboard.controller:User
+     * @description
+     * My Description rules
+     */
+    function testFunction(num){
+      console.info('This is a test function');
+    }
+  }
 
 }());
 
@@ -186,11 +194,13 @@ Produces: ```app/src/common/kuSubmit.directive.js```:
 ```javascript
 /**
  * @ngdoc directive
- * @module app.common
- * @name kuSubmit
- * @restrict E
+ * @name app.common.directive:kuSubmit
  * @scope true
+ * @param {object} test test object
+ * @restrict E
+ *
  * @description < description placeholder >
+ *
  */
 
 (function(){
@@ -209,7 +219,7 @@ Produces: ```app/src/common/kuSubmit.directive.js```:
       restrict: 'E',
       template: '<div></div>',
       scope: {
-
+        test: '='
       }
     };
 
@@ -236,33 +246,44 @@ Produces: ```app/src/common/calendar.factory.js```:
 
 ```javascript
 /**
- * @ngdoc factory
- * @module app.common
- * @name calendar
+ * @ngdoc service
+ * @name app.common.calendar
  * @description < description placeholder >
- * @returns {object} < returns placeholder >
  */
 
 (function(){
 
   'use strict';
 
-	angular
-		.module('app.common')
-		.factory('calendar', calendar);
+  angular
+    .module('app.common')
+    .factory('calendar', calendar);
 
   /* @ngInject */
   function calendar(){
-		return {
-			testFunction: testFunction
-		};
+    return {
+      testFunction: testFunction
+    };
 
-		////////////////////
+    ////////////////////
 
-		function testFunction(){
-			console.info('This is a test function');
-		}
-	}
+    /**
+     * @ngdoc
+     * @name app.common.calendar#testFunction
+     * @methodOf app.common.calendar
+     *
+     * @description < description placeholder >
+     * @example
+     * <pre>
+     * calendar.testFunction(id);
+     * </pre>
+     * @param {int} entity id
+     */
+
+    function testFunction(id){
+      console.info('This is a test function');
+    }
+  }
 
 }());
 
@@ -280,10 +301,18 @@ Produces: ```app/src/common/errorMessages.constant.js```:
 
 ```javascript
 /**
- * @ngdoc constant
- * @module app.common
- * @name errorMessages
+ * @ngdoc object
+ * @name app.common.constant:errorMessages
  * @description < description placeholder >
+ * @example
+   <pre>
+   angular.module("someModule", [])
+   .config(configuration);
+
+   function configuration(errorMessages, someProvider){
+    //use the injected constant
+    };
+   </pre>
  */
 
 (function(){
@@ -295,10 +324,11 @@ Produces: ```app/src/common/errorMessages.constant.js```:
   };
 
   angular
-	  .module('app.common')
-	  .constant('errorMessages', errorMessages);
+    .module('app.common')
+    .constant('errorMessages', errorMessages);
 
 }());
+
 ```
 
 #### Value
@@ -313,10 +343,19 @@ Produces: ```app/src/core/appId.value.js```:
 
 ```javascript
 /**
- * @ngdoc value
- * @module app.core
- * @name appId
+ * @ngdoc object
+ * @name app.core.constant:appId
  * @description < description placeholder >
+ * @example
+ <pre>
+ angular.module("someModule", [])
+ .controller("some", controller);
+
+ function controller(appId, someService){
+  var vm = this;
+  //use the injected constant
+  };
+ </pre>
  */
 
 (function(){
@@ -328,10 +367,11 @@ Produces: ```app/src/core/appId.value.js```:
   };
 
   angular
-	  .module('app.core')
-	  .value('appId', appId);
+    .module('app.core')
+    .value('appId', appId);
 
 }());
+
 ```
 
 ### Filter
@@ -347,10 +387,10 @@ Produces: ```app/src/common/currency.filter.js```:
 ```javascript
 /**
  * @ngdoc filter
- * @module app.common
- * @name currency
+ * @name app.common.filer:currency
  * @description < description placeholder >
- * @returns {function} < returns placeholder >
+ * @param {object} input object to be filtered
+ * @returns {object} < returns placeholder >
  */
 
 (function(){
@@ -385,8 +425,7 @@ Produces: ```app/src/talks/talks.module.js```:
 
 ```javascript
 /**
- * @ngdoc module
- * @module app.talks
+ * @ngdoc overview
  * @name app.talks
  * @description < description placeholder >
  */
@@ -447,6 +486,9 @@ Creates a ```dist``` containing a distribute-able Angular App
 ##### ```$ grunt bump```
 Bump application version and goodies, details at [grunt-bump](https://github.com/vojtajina/grunt-bump)
 
+##### ```$ grunt ngdocs```
+Generates documentation from the ngdoc declared in the Angular source code
+
 ### Third Parties
 
 Following packages are pre-configured:
@@ -461,7 +503,7 @@ Following packages are pre-configured:
 
 #### Why generator-ng-super?
 
-**generator-ng-super** is a heavily opinionated project that has been initiated to contain mix of best practices learned through courses and expirience. Alot of work has been shamelessly pulled in through John Papa's course of [Angular JS Patterns: Clean Code](http://www.pluralsight.com/courses/angularjs-patterns-clean-code) and its corresponding [Angular JS Style Guide](https://github.com/johnpapa/angularjs-styleguide). 
+**generator-ng-super** is a heavily opinionated project that has been initiated to contain mix of best practices learned through courses and expirience. 
 
 It also contains a mix of packages which are best in the business pre-configured into the application structure like Angular UI's Twitter Bootstrap Directives, Angular UI's UI-Router (replacing ngRoute) and Martin Gonto's Restangular (replacing $http and $resource).
 

@@ -1,8 +1,7 @@
 /**
- * @ngdoc config
- * @module app.core
+ * @ngdoc overview
  * @name app.core
- * @description core Restangular configurations
+ * @description Configuration block for restangular
  */
 
 (function(){
