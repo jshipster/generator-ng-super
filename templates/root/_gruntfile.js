@@ -18,6 +18,7 @@ module.exports = function (grunt) {
   grunt.registerTask('test', ['karma:test']);
 
   grunt.registerTask('build', [
+    'ngdocs',
     'clean:dist',
     'html2js',
     'compass:dist',
