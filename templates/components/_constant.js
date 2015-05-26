@@ -1,8 +1,16 @@
 /**
- * @ngdoc constant
- * @module app.<%= module %>
- * @name <%= component %>
+ * @ngdoc object
+ * @name app.<%= module %>.constant:<%= component %>
  * @description < description placeholder >
+ * @example
+   <pre>
+   angular.module("someModule", [])
+   .config(configuration);
+
+   function configuration(<%= component %>, someProvider){
+    //use the injected constant
+    };
+   </pre>
  */
 
 (function(){

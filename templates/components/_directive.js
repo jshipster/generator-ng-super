@@ -1,10 +1,12 @@
 /**
  * @ngdoc directive
- * @module app.<%= module %>
- * @name <%= component %>
- * @restrict E
+ * @name app.<%= module %>.directive:<%= component %>
  * @scope true
+ * @param {object} test test object
+ * @restrict E
+ *
  * @description < description placeholder >
+ *
  */
 
 (function(){
@@ -23,7 +25,7 @@
       restrict: 'E',
       template: '<div></div>',
       scope: {
-
+        test: '='
       }
     };
 

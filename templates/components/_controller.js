@@ -1,7 +1,6 @@
 /**
  * @ngdoc controller
- * @module app.<%= module %>
- * @name <%= component %>
+ * @name app.<%= module %>.controller:<%= component %>
  * @description < description placeholder >
  */
 
@@ -21,7 +20,15 @@
 
     /////////////////////
 
-		function testFunction(){
+    /**
+     * @ngdoc method
+     * @name testFunction
+     * @param {number} num number is the number of the number
+     * @methodOf app.<%= module %>.controller:<%= component %>
+     * @description
+     * My Description rules
+     */
+    function testFunction(num){
 			console.info('This is a test function');
 		}
 	}
