@@ -1,6 +1,3 @@
 module.exports = {
-  html: 'dist/index.html',
-  // options: {
-  //   assetsDirs: ['foo/bar', 'bar']
-  // }
+  html: 'dist/index.html'
 }
