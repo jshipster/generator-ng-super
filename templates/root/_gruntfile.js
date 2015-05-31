@@ -12,12 +12,16 @@ module.exports = function (grunt) {
 
   grunt.registerTask('server', [
     'wiredep',
+    'configureProxies',
+    'connect:livereload',
     'concurrent:dev'
   ]);
 
   grunt.registerTask('test', ['karma:test']);
 
   grunt.registerTask('build', [
+    'jshint',
+    'karma:dist',
     'ngdocs',
     'clean:dist',
     'html2js',

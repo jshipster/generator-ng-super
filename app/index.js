@@ -77,6 +77,7 @@ var NgSuperGenerator = yeoman.generators.Base.extend({
           this.src.copy(utils.getGruntTasksTemplatePath('wiredep.js'), 'tasks/wiredep.js');
           this.src.copy(utils.getGruntTasksTemplatePath('bump.js'), 'tasks/bump.js');
           this.src.copy(utils.getGruntTasksTemplatePath('html2js.js'), 'tasks/html2js.js');
+          this.src.copy(utils.getGruntTasksTemplatePath('jshint.js'), 'tasks/jshint.js');
         }
     },
 

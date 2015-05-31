@@ -15,7 +15,7 @@
     beforeEach(inject(function($controller, $injector){
 
       scope = $injector.get('$rootScope');
-      ctrl = $controller('WelcomeCtrl', {
+      ctrl = $controller('Welcome', {
         //add injectable services
       });
 
