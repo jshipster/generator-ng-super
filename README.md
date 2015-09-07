@@ -45,9 +45,10 @@ $ npm install bower -g
 To install Compass**
 
 ```bash
-$ gem install Compass
+$ gem install compass
 ```
 ** Make sure you have Ruby installed on your machine
+** https://www.ruby-lang.org/en/documentation/installation/
 
 ## Setup ng-Super webapp
 
