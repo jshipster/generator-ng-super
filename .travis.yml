@@ -1,6 +1,6 @@
 language: node_js
 node_js:
-  - '0.10'
+  - '4.1'
 before_install:
   - currentfolder=${PWD##*/}
   - if [ "$currentfolder" != 'generator-ng-super' ]; then cd .. && eval "mv $currentfolder generator-ng-super" && cd generator-ng-super; fi
