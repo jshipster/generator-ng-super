@@ -21,7 +21,7 @@ module.exports = {
       }
     ],
     runnerPort: 9876,
-    browsers: ['PhantomJS'],
+    browsers: ['PhantomJS2'],
     logLevel: 'ERROR'
   },
   dist: {
@@ -36,7 +36,7 @@ module.exports = {
       }
     ],
     runnerPort: 9876,
-    browsers: ['PhantomJS'],
+    browsers: ['PhantomJS2'],
     logLevel: 'ERROR'
   }
 };
