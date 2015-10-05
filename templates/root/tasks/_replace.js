@@ -5,11 +5,7 @@ module.exports = {
     replacements: [{
       from: /src\/[a-zA-Z0-9]*\//g,
       to: 'views/'
-    },
-      {
-        from: "angular.module('app', [",
-        to: "angular.module('app', ['templates-htmlmin',"
-      }]
+    }]
   },
   styles: {
     src: ['dist/styles/main.css'],
