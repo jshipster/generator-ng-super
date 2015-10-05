@@ -2,6 +2,8 @@ module.exports = {
   options: {
     quoteChar: '\'',
     singleModule: true,
+    existingModule: true,
+    module: 'app.core',
     base: 'app',
     rename: function (moduleName){
       return moduleName.replace(/src\/[a-zA-Z0-9]*\//g, 'views/');
