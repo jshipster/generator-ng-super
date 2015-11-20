@@ -4,7 +4,7 @@
   "description": "Yeoman generator",
   "license": "MIT",
   "main": "app/index.js",
-  "repository": "http://github.com/mohuk/generator-ng-super",
+  "repository": "http://github.com/jshipster/generator-ng-super",
   "author": {
     "name": "Mohammad Umair Khan",
     "email": "mohammad.umair.k@gmail.com",
@@ -39,7 +39,7 @@
     "ng-super"
   ],
   "bugs":{
-    "url" : "http://github.com/mohuk/generator-ng-super/issues",
+    "url" : "http://github.com/jshipster/generator-ng-super/issues",
     "email" : "mohammad.umair.k@gmail.com"
   },
   "dependencies": {
