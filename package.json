@@ -19,8 +19,10 @@
   "files": [
     "app",
     "controller",
+    "constant",
     "directive",
     "factory",
+    "value",
     "feature",
     "filter",
     "view",
